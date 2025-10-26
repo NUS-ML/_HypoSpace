@@ -1,17 +1,31 @@
 llm:
-  type: openrouter
+  type: openai
+  # If you want to keep the OpenRouter model entry for reference, leave it here.
   models:
-    openrouter: "openai/gpt-4o"
-    openai: Null
+    openrouter: "qwen/qwen3-235b-a22b:free"
+    openai: "gpt-4o-mini"
     anthropic: Null
+  # API keys for different adapters. We're configuring the `openai` adapter below.
   api_keys:
-    openrouter: ""
-    openai: ""
+    openrouter: "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"
+    openai: "sk-1jlCFDIGEKWqgJVb3hiuOFKz6oNlsjq8WrS9onjrrtn06OP5"
     anthropic: ""
+  # Base URL to use for the OpenAI-compatible endpoint (yunwu.ai in your case)
+  base_url: "https://yunwu.ai/v1"
   temperature: 0.7
 
 benchmark:
   checkpoint: "checkpoints"
   verbose: true
   output_pattern: "results/{dataset_name}_{model}.json"
+  # Rate limiting / retry tuning (seconds)
+  min_delay_between_queries: 1.0
+  base_backoff: 1.0
+  # Quick-retreat behavior: stop the run early if too many 429s to avoid wasting quota
+  # Fraction of failed queries (failed_queries / total_queries) above which to stop
+  stop_on_429_threshold: 0.7
+  # Minimum total queries to observe before applying stop_on_429_threshold
+  base_url: "https://yunwu.ai/v1"
+  # Optional: if you prefer pause-and-continue, set pause_seconds_on_429 > 0 (default 0 = do not pause)
+  pause_seconds_on_429: 0
 

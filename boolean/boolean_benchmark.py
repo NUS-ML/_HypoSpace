@@ -324,41 +324,46 @@ class BooleanBenchmarkRefined:
         return True
     
     def validate_expression(self, expr_str: str, observations: List[BooleanObservation]) -> Tuple[bool, Optional[Dict]]:
-        """Validate if expression is consistent with observations and meets constraints."""
+        """Validate if expression is consistent with observations and meets constraints.
+
+        Returns:
+            Tuple[bool, Optional[Dict], Optional[str]] -> (is_valid, truth_table_or_none, failure_reason_or_none)
+        """
         try:
-            # Now create expression and validate
             expr = BooleanExpression(expr_str, self.variables, self.operators)
-            
-            # Check if expression uses only allowed variables
-            if expr.sympy_expr is not None:
-                allowed_symbols = {sp.symbols(v) for v in self.variables}
-                free_symbols = expr.sympy_expr.free_symbols
-                if not free_symbols.issubset(allowed_symbols):
-                    return False, None
-                
-                # Check operators using AST traversal
-                if not self._check_operators_in_ast(expr.sympy_expr, self.operators):
-                    return False, None
-                
-                # Disallow constants (True/False) to maintain consistent space
-                for node in sp.preorder_traversal(expr.sympy_expr):
-                    if isinstance(node, (sp.logic.boolalg.BooleanTrue, sp.logic.boolalg.BooleanFalse)):
-                        return False, None
-            
-            # Check expression depth using AST
-            if expr.sympy_expr is not None:
-                ast_depth = self._get_ast_depth(expr.sympy_expr)
-                if ast_depth > self.max_depth:
-                    return False, None
-            
+
+            # If parsing failed
+            if expr.sympy_expr is None:
+                return False, None, 'parse_failure'
+
+            # Check allowed variables
+            allowed_symbols = {sp.symbols(v) for v in self.variables}
+            free_symbols = expr.sympy_expr.free_symbols
+            if not free_symbols.issubset(allowed_symbols):
+                return False, None, 'invalid_variables'
+
+            # Check operators using AST traversal
+            if not self._check_operators_in_ast(expr.sympy_expr, self.operators):
+                return False, None, 'invalid_operators'
+
+            # Disallow constants
+            for node in sp.preorder_traversal(expr.sympy_expr):
+                if isinstance(node, (sp.logic.boolalg.BooleanTrue, sp.logic.boolalg.BooleanFalse)):
+                    return False, None, 'contains_boolean_constant'
+
+            # Check depth
+            ast_depth = self._get_ast_depth(expr.sympy_expr)
+            if ast_depth > self.max_depth:
+                return False, None, 'depth_exceeded'
+
             # Check consistency with observations
             for obs in observations:
                 if expr.evaluate(obs.inputs) != obs.output:
-                    return False, None
-            
-            return True, expr.truth_table
-        except:
-            return False, None
+                    return False, None, 'inconsistent_with_observations'
+
+            return True, expr.truth_table, None
+        except Exception as e:
+            return False, None, f'exception:{type(e).__name__}:{str(e)}'
     
     def _classify_error(self, error_message: str) -> str:
         """Classify the type of error from the error message with more detail."""
@@ -425,7 +430,9 @@ class BooleanBenchmarkRefined:
         observation_set: Dict,
         n_queries: int = 10,
         verbose: bool = True,
-        max_retries: int = 5
+        max_retries: int = 5,
+        min_delay_between_queries: float = 0.5,
+        base_backoff: float = 0.5
     ) -> Dict:
         """
         Evaluate LLM on a single observation set.
@@ -474,6 +481,10 @@ class BooleanBenchmarkRefined:
         errors = []  # List of error details
         error_counts = {}  # Count of each error type
         
+        # validation failure aggregation for diagnostics
+        from collections import Counter as _Counter
+        validation_failures = _Counter()
+
         for i in range(n_queries):
             prompt = self.create_prompt(observations, all_hypotheses)
             
@@ -481,17 +492,54 @@ class BooleanBenchmarkRefined:
             hypothesis_str = None
             query_error = None
             for attempt in range(max_retries):
-                # Use query_with_usage if available
-                if hasattr(llm, 'query_with_usage'):
-                    result = llm.query_with_usage(prompt)
-                    response = result['response']
-                    # Track usage
-                    total_prompt_tokens += result['usage']['prompt_tokens']
-                    total_completion_tokens += result['usage']['completion_tokens']
-                    total_tokens += result['usage']['total_tokens']
-                    total_cost += result.get('cost', 0.0)
-                else:
-                    response = llm.query(prompt)
+                # Respect inter-query delay to reduce likelihood of rate limit
+                if attempt == 0:
+                    # only delay before the first attempt for this query
+                    try:
+                        import time
+                        time.sleep(min_delay_between_queries)
+                    except Exception:
+                        pass
+
+                # Use query_with_usage if available, wrap with try/except to classify errors
+                try:
+                    if hasattr(llm, 'query_with_usage'):
+                        result = llm.query_with_usage(prompt)
+                        response = result['response']
+                        # Track usage
+                        total_prompt_tokens += result['usage'].get('prompt_tokens', 0)
+                        total_completion_tokens += result['usage'].get('completion_tokens', 0)
+                        total_tokens += result['usage'].get('total_tokens', 0)
+                        total_cost += result.get('cost', 0.0)
+                    else:
+                        response = llm.query(prompt)
+                except Exception as e:
+                    # Classify error and decide whether to retry with backoff
+                    err_str = str(e)
+                    err_type = self._classify_error(err_str)
+                    query_error = {
+                        'query_index': i,
+                        'attempt': attempt + 1,
+                        'error_message': f"Error querying {llm.get_name()}: {err_str}",
+                        'error_type': err_type
+                    }
+                    # Track attempt-level error counts
+                    error_counts[err_type] = error_counts.get(err_type, 0) + 1
+
+                    # If it's retryable (rate limit or 5xx), backoff and retry
+                    if err_type.startswith('rate_limit') or err_type.startswith('bad_gateway') or err_type.startswith('server_error'):
+                        try:
+                            import time
+                            # exponential backoff with jitter
+                            jitter = random.uniform(0, 1.0)
+                            backoff = base_backoff * (2 ** attempt) * (1.0 + jitter)
+                            time.sleep(backoff)
+                        except Exception:
+                            pass
+                        continue
+                    else:
+                        # Non-retryable at this level: break and treat as error
+                        break
                 
                 # Check if response is an error
                 if response.startswith("Error querying"):
@@ -520,28 +568,35 @@ class BooleanBenchmarkRefined:
             elif hypothesis_str:  # Only if we got a valid hypothesis
                 parse_success_count += 1
                 all_hypotheses.append(hypothesis_str)
-                
+
                 # Only count novelty for in-space expressions
                 if self._in_space(hypothesis_str):
                     in_space_count += 1
-                    
+
                     # Check uniqueness among in-space hypotheses (for novelty calculation)
                     all_mech_key = self.get_expression_mechanistic_key(hypothesis_str)
                     if all_mech_key and all_mech_key not in all_unique_mechanistic_keys:
                         all_unique_mechanistic_keys.add(all_mech_key)
                         unique_all_expressions.append(hypothesis_str)
-                
-                # Validate expression against observations
-                is_valid, truth_table = self.validate_expression(hypothesis_str, observations)
-                
+
+                # Validate expression against observations and collect failure reason if any
+                is_valid, truth_table, failure_reason = self.validate_expression(hypothesis_str, observations)
+
                 if is_valid:
                     valid_hypotheses.append(hypothesis_str)
-                    
+
                     # Check uniqueness among valid hypotheses
                     mech_key = self.get_expression_mechanistic_key(hypothesis_str)
                     if mech_key and mech_key not in unique_mechanistic_keys:
                         unique_mechanistic_keys.add(mech_key)
                         unique_valid_expressions.append(hypothesis_str)
+                else:
+                    # record validation failure in errors for diagnostics (but not as an LLM/network error)
+                    if failure_reason:
+                        errors.append({'query_index': i, 'attempt': attempt + 1, 'error_message': f'validation_failure: {failure_reason}', 'error_type': f'validation_{failure_reason}'})
+                        # track as a distinct error type in error_counts
+                        error_counts[f'validation_{failure_reason}'] = error_counts.get(f'validation_{failure_reason}', 0) + 1
+                        validation_failures[failure_reason] += 1
         
         # Calculate metrics
         parse_success_rate = parse_success_count / n_queries if n_queries > 0 else 0
@@ -596,6 +651,7 @@ class BooleanBenchmarkRefined:
             'cost': total_cost,
             # Error tracking
             'errors': errors,
+            'validation_failures': dict(validation_failures),
             'error_summary': {
                 'total_errors': len(errors),
                 'error_types': error_counts
@@ -611,7 +667,8 @@ class BooleanBenchmarkRefined:
         seed: Optional[int] = None,
         verbose: bool = True,
         checkpoint_dir: str = "checkpoints",
-        run_id: Optional[str] = None
+        run_id: Optional[str] = None,
+        config: Optional[Dict] = None,
     ) -> Dict:
         """
         Run the benchmark with sampling.
@@ -635,8 +692,8 @@ class BooleanBenchmarkRefined:
         # Generate run ID and safe filename
         if not run_id:
             run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
-        # Sanitize LLM name for filename
-        safe_llm_name = llm.get_name().replace('/', '_').replace('(', '_').replace(')', '_').replace(' ', '_')
+        # Sanitize LLM name for filename (replace characters invalid on Windows)
+        safe_llm_name = llm.get_name().replace('/', '_').replace('(', '_').replace(')', '_').replace(' ', '_').replace(':', '_')
         checkpoint_file = checkpoint_path / f"checkpoint_{safe_llm_name}_{run_id}.json"
         
         print(f"\nRunning refined Boolean benchmark")
@@ -651,6 +708,12 @@ class BooleanBenchmarkRefined:
         
         # Sample observation sets
         sampled_sets = self.sample_observation_sets(n_samples, seed)
+
+        # Ensure backoff/delay parameters exist on self (can be set by main() or use defaults)
+        if not hasattr(self, 'min_delay_between_queries'):
+            self.min_delay_between_queries = 0.5
+        if not hasattr(self, 'base_backoff'):
+            self.base_backoff = 0.5
         
         # Initialize results tracking
         all_results = []
@@ -716,7 +779,9 @@ class BooleanBenchmarkRefined:
                 
                 # Evaluate on this observation set
                 result = self.evaluate_single_observation_set(
-                    llm, obs_set, n_queries, verbose=False
+                    llm, obs_set, n_queries, verbose=False,
+                    min_delay_between_queries=self.min_delay_between_queries,
+                    base_backoff=self.base_backoff
                 )
                 
                 all_results.append(result)
@@ -767,7 +832,30 @@ class BooleanBenchmarkRefined:
                 
                 with open(checkpoint_file, 'w') as f:
                     json.dump(checkpoint_data, f, indent=2)
+                # QUICK-RETREAT: check cumulative failure rate to avoid wasting quota
+                cfg = config or {}
+                stop_threshold = cfg.get('benchmark', {}).get('stop_on_429_threshold', None)
+                min_queries_check = cfg.get('benchmark', {}).get('min_queries_to_check', 5)
+                pause_seconds = cfg.get('benchmark', {}).get('pause_seconds_on_429', 0)
 
+                # compute cumulative totals
+                cumulative_queries = sum(r.get('n_queries', 0) for r in all_results)
+                cumulative_failed = len(all_errors)
+                failed_fraction = (cumulative_failed / cumulative_queries) if cumulative_queries else 0
+
+                if stop_threshold is not None and cumulative_queries >= min_queries_check and failed_fraction >= float(stop_threshold):
+                    # Save final checkpoint and abort further samples
+                    print(f"High failure fraction detected: {failed_fraction:.2%} >= {stop_threshold}.")
+                    if pause_seconds and pause_seconds > 0:
+                        print(f"Pausing for {pause_seconds} seconds before resuming...")
+                        try:
+                            import time
+                            time.sleep(float(pause_seconds))
+                        except Exception:
+                            pass
+                    else:
+                        print("Stopping benchmark early to avoid wasting quota. Check your API quota or switch keys.")
+                        break
             except Exception as e:
                 print(f"  Error processing sample {idx + 1}: {str(e)}")
                 traceback.print_exc()
@@ -793,6 +881,13 @@ class BooleanBenchmarkRefined:
             return p_val
         
         # Compile final results
+        # Compute total queries across all samples (handles adaptive and fixed modes)
+        total_queries = sum(r.get('n_queries', 0) for r in all_results) if all_results else 0
+        # total_error_attempts tracks the summed counts in total_error_counts (attempt-level counts)
+        total_error_attempts = sum(total_error_counts.values()) if total_error_counts else 0
+        # total_failed_queries = number of queries that failed completely (after all retries)
+        total_failed_queries = len(all_errors)
+
         final_results = {
             'run_id': run_id,
             'llm_name': llm.get_name(),
@@ -821,17 +916,25 @@ class BooleanBenchmarkRefined:
                 'completion_tokens': total_completion_tokens,
                 'total_tokens': total_tokens,
                 'avg_tokens_per_sample': total_tokens / len(all_results) if all_results else 0,
-                'avg_tokens_per_query': total_tokens / (len(all_results) * (n_queries_per_sample or 1)) if all_results else 0
+                # Use actual total_queries to compute per-query averages
+                'avg_tokens_per_query': total_tokens / total_queries if total_queries else 0
             },
             'cost': {
                 'total_cost': total_cost,
                 'avg_cost_per_sample': total_cost / len(all_results) if all_results else 0,
-                'avg_cost_per_query': total_cost / (len(all_results) * (n_queries_per_sample or 1)) if all_results else 0
+                'avg_cost_per_query': total_cost / total_queries if total_queries else 0
             },
             'error_summary': {
-                'total_errors': len(all_errors),
+                # total_errors = number of failed queries (one entry per failed query)
+                'total_errors': total_failed_queries,
+                # error_types: attempt-level counts aggregated from samples
                 'error_types': total_error_counts,
-                'error_rate': len(all_errors) / (len(all_results) * (n_queries_per_sample or 1)) if all_results else 0
+                # total_error_attempts: number of failed attempts recorded (may be > total_errors when retries occurred)
+                'total_error_attempts': total_error_attempts,
+                # error_rate: ratio of failed queries over total queries (<= 1.0)
+                'error_rate': (total_failed_queries / total_queries) if total_queries else 0,
+                # attempts_per_query: average number of error attempts per query (can be >1)
+                'attempts_per_query': (total_error_attempts / total_queries) if total_queries else 0
             },
             'per_sample_results': all_results
         }
@@ -888,11 +991,12 @@ def setup_llm(llm_type: str, **kwargs) -> LLMInterface:
         api_key = kwargs.get('api_key') or os.environ.get('OPENAI_API_KEY')
         if not api_key:
             raise ValueError("OpenAI API key required")
-        
+        base_url = kwargs.get('base_url') or os.environ.get('OPENAI_API_BASE') or kwargs.get('api_base')
         return OpenAILLM(
             model=kwargs.get('model', 'gpt-4'),
             api_key=api_key,
-            temperature=kwargs.get('temperature', 0.7)
+            temperature=kwargs.get('temperature', 0.7),
+            base_url=base_url
         )
     
     elif llm_type == "anthropic":
@@ -973,6 +1077,8 @@ def main():
         sys.exit(1)
     dataset_name = Path(args.dataset).stem
     model_name = Path(model).stem if model else llm_type
+    # Sanitize model_name for safe filesystem paths (replace characters invalid on Windows)
+    model_name = model_name.replace(':', '_').replace('/', '_').replace('\\', '_').replace(' ', '_')
     output_pattern = config.get('benchmark', {}).get('output_pattern', 'results_{dataset_name}_{model}.json')
     output = output_pattern.format(dataset_name=dataset_name, model=model_name, llm_type=llm_type)
 
@@ -1005,10 +1111,15 @@ def main():
         llm_type,
         model=model,
         api_key=api_key,
-        temperature=temperature
+        temperature=temperature,
+        base_url=config.get('llm', {}).get('base_url')
     )
     
     # Run benchmark
+    # configure delay/backoff from config (optional)
+    benchmark.min_delay_between_queries = config.get('benchmark', {}).get('min_delay_between_queries', 0.5)
+    benchmark.base_backoff = config.get('benchmark', {}).get('base_backoff', 0.5)
+
     results = benchmark.run_benchmark(
         llm=llm,
         n_samples=args.n_samples,
@@ -1017,7 +1128,8 @@ def main():
         seed=args.seed,
         verbose=verbose,
         checkpoint_dir=checkpoint_dir,
-        run_id=run_id
+        run_id=run_id,
+        config=config
     )
     
     # Save final results
