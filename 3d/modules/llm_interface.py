@@ -207,59 +207,99 @@ class OpenRouterLLM(LLMInterface):
 class OpenAILLM(LLMInterface):
     """
     OpenAI API interface for GPT models.
-    
+
     Requires openai package and API key.
     """
-    
+
+    # def __init__(
+    #     self,
+    #     model: str = "gpt-4",
+    #     api_key: Optional[str] = None,
+    #     temperature: float = 0.7,
+    #     max_tokens: int = 40960
+    # ):
+    #     """
+    #     Initialize OpenAI LLM interface.
+    #
+    #     Args:
+    #         model: OpenAI model to use
+    #         api_key: OpenAI API key (uses environment variable if not provided)
+    #         temperature: Sampling temperature
+    #         max_tokens: Maximum tokens in response
+    #     """
+    #     try:
+    #         import openai
+    #     except ImportError:
+    #         raise ImportError("Please install openai package: pip install openai")
+    #
+    #     self.model = model
+    #     self.temperature = temperature
+    #     self.max_tokens = max_tokens
+    #
+    #     if not api_key:
+    #         import os
+    #         api_key = os.getenv("OPENAI_API_KEY")
+    #         if not api_key:
+    #             raise ValueError("OpenAI API key must be provided or set as OPENAI_API_KEY environment variable")
+    #
+    #     self.client = openai.OpenAI(api_key=api_key)
+
     def __init__(
-        self, 
-        model: str = "gpt-4",
-        api_key: Optional[str] = None,
-        temperature: float = 0.7,
-        max_tokens: int = 40960
+            self,
+            model: str = "gpt-4",
+            api_key: Optional[str] = None,
+            temperature: float = 0.7,
+            max_tokens: int = 40960,
+            base_url: str = "https://api.deepseek.com/v1"  # 添加 base_url 参数
     ):
         """
         Initialize OpenAI LLM interface.
-        
+
         Args:
             model: OpenAI model to use
             api_key: OpenAI API key (uses environment variable if not provided)
             temperature: Sampling temperature
             max_tokens: Maximum tokens in response
+            base_url: Custom base URL for OpenAI-compatible APIs
         """
         try:
             import openai
         except ImportError:
             raise ImportError("Please install openai package: pip install openai")
-        
+
         self.model = model
         self.temperature = temperature
         self.max_tokens = max_tokens
-        
+
         if not api_key:
             import os
             api_key = os.getenv("OPENAI_API_KEY")
             if not api_key:
                 raise ValueError("OpenAI API key must be provided or set as OPENAI_API_KEY environment variable")
-        
-        self.client = openai.OpenAI(api_key=api_key)
-    
+
+        # 支持自定义 base_url
+        client_kwargs = {"api_key": api_key}
+        if base_url:
+            client_kwargs["base_url"] = base_url
+
+        self.client = openai.OpenAI(**client_kwargs)
+
     def query(self, prompt: str) -> str:
         """Query OpenAI API."""
         result = self.query_with_usage(prompt)
         return result['response']
-    
+
     def query_with_usage(self, prompt: str) -> Dict[str, Any]:
         try:
             # print(self.max_tokens)
-            resp = self.client.responses.create(
-                model=self.model,
-                input=[
-                    {"role": "system", "content": "You are an expert in causal inference and graph theory."},
-                    {"role": "user", "content": prompt},
+            resp = self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system",
+                     "content": "You are an expert in causal inference and graph theory. Please provide ONLY the 3D structure specification in the exact format requested, without any additional explanations, greetings, or text."},
+                    {"role": "user", "content": prompt}
                 ],
-                reasoning={"effort": "medium"},
-                max_output_tokens=self.max_tokens
+                # stream=False
             )
 
             text = _extract_text(resp)
@@ -285,11 +325,11 @@ class OpenAILLM(LLMInterface):
                 "usage": {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0},
                 "cost": 0.0,
             }
-    
+
     def get_name(self) -> str:
         """Get the model name."""
         return f"OpenAI({self.model})"
-    
+
     def get_model_pricing(self) -> Dict[str, float]:
         """Get pricing per 1M tokens for OpenAI models."""
         # Pricing in dollars per 1M tokens

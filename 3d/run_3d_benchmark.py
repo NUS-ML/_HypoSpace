@@ -3,6 +3,8 @@ import json
 import argparse
 import os
 import re
+import time
+
 import yaml
 import random
 import numpy as np
@@ -515,7 +517,8 @@ class Benchmark3D:
         observation_set: Dict,
         n_queries: int = 10,
         verbose: bool = True,
-        max_retries: int = 3
+        max_retries: int = 3,
+        request_delay: float = 0.5
     ) -> Dict:
         """Evaluate LLM on a single observation set with enhanced tracking."""
         
@@ -563,9 +566,13 @@ class Benchmark3D:
         # Error tracking
         errors = []
         error_counts = {}
-        
+
         for i in range(n_queries):
-            # Pass prior unique structures as history to avoid repetition
+            # 在每次查询前添加延迟（除了第一次）
+            if i > 0 and request_delay > 0:
+                if verbose:
+                    print(f"  Waiting {request_delay:.1f}s before next request...")
+                time.sleep(request_delay)
             prompt = self.create_prompt(observations, prior_structures=unique_structures)
             
             # Try to get a valid response with retries
@@ -587,7 +594,7 @@ class Benchmark3D:
                         total_cost += result.get('cost', 0.0)
                     else:
                         response = llm.query(prompt)
-                    
+                    print(response)
                     # Check if response is an error
                     if response and response.startswith("Error querying"):
                         query_error = {
@@ -599,7 +606,6 @@ class Benchmark3D:
                         error_type = query_error['error_type']
                         error_counts[error_type] = error_counts.get(error_type, 0) + 1
                         continue
-                    
                     # Parse response
                     structure = self.parse_llm_response(response)
                     if structure:
@@ -999,7 +1005,8 @@ def setup_llm(llm_type: str, **kwargs) -> LLMInterface:
         return OpenAILLM(
             model=kwargs.get('model', 'gpt-4'),
             api_key=api_key,
-            temperature=kwargs.get('temperature', 0.7)
+            temperature=kwargs.get('temperature', 0.7),
+            base_url = kwargs.get('base_url')
         )
     
     elif llm_type == "anthropic":
@@ -1087,6 +1094,7 @@ def main():
             api_key = os.environ.get(env_vars[llm_type])
     
     temperature = config.get('llm', {}).get('temperature', 0.7)
+    base_url = config.get('llm', {}).get('base_urls', {}).get(llm_type)
     checkpoint_dir = args.checkpoint_dir or config.get('benchmark', {}).get('checkpoint_dir', 'checkpoints')
     verbose = args.verbose and config.get('benchmark', {}).get('verbose', True)
     run_id = config.get('benchmark', {}).get('run_id', None)
@@ -1128,6 +1136,7 @@ def main():
         llm_type,
         model=model,
         api_key=api_key,
+        base_url=base_url,
         temperature=temperature
     )
     

@@ -1,17 +1,18 @@
 llm:
-  type: openrouter
+  type: openai
   models:
-    openrouter: "openai/gpt-4o"
-    openai: Null
+    openrouter: Null
+    openai: gpt-4o-mini
     anthropic: Null
   api_keys:
     openrouter: ""
-    openai: ""
+    openai: "sk-1jlCFDIGEKWqgJVb3hiuOFKz6oNlsjq8WrS9onjrrtn06OP5"
     anthropic: ""
+  base_urls:
+    openai: "https://yunwu.ai/v1"
   temperature: 0.7
 
 benchmark:
   checkpoint: "checkpoints"
   verbose: true
   output_pattern: "results/{dataset_name}_{model}.json"
-
