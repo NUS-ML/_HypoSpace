@@ -1,0 +1,305 @@
+{
+  "run_id": "20251023_191806",
+  "llm_name": "OpenRouter(qwen/qwen3-235b-a22b:free)",
+  "n_samples": 5,
+  "n_queries_per_sample": null,
+  "query_multiplier": 1.0,
+  "seed": 54321,
+  "timestamp": "2025-10-23T20:18:09.460491",
+  "results": [
+    {
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0001",
+      "n_observations": 4,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 2,
+      "n_unique_valid": 2,
+      "n_unique_all": 2,
+      "n_recovered_gts": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "all_hypotheses": [
+        "x AND y",
+        "(x AND y) AND (x OR y)"
+      ],
+      "valid_hypotheses": [
+        "x AND y",
+        "(x AND y) AND (x OR y)"
+      ],
+      "unique_valid_expressions": [
+        "x AND y",
+        "(x AND y) AND (x OR y)"
+      ],
+      "unique_all_expressions": [
+        "x AND y",
+        "(x AND y) AND (x OR y)"
+      ],
+      "token_usage": {
+        "prompt_tokens": 1772,
+        "completion_tokens": 4384,
+        "total_tokens": 6156
+      },
+      "cost": 0.006156,
+      "errors": [],
+      "validation_failures": {},
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      }
+    },
+    {
+      "observation_set_id": "n1_inputs_10_outputs_1",
+      "n_observations": 1,
+      "n_ground_truths": 5,
+      "n_queries": 5,
+      "n_valid": 5,
+      "n_unique_valid": 5,
+      "n_unique_all": 5,
+      "n_recovered_gts": 5,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "all_hypotheses": [
+        "x",
+        "x OR y",
+        "(x OR y) AND x",
+        "(x AND y) OR x",
+        "(x AND y) OR (x OR y)"
+      ],
+      "valid_hypotheses": [
+        "x",
+        "x OR y",
+        "(x OR y) AND x",
+        "(x AND y) OR x",
+        "(x AND y) OR (x OR y)"
+      ],
+      "unique_valid_expressions": [
+        "x",
+        "x OR y",
+        "(x OR y) AND x",
+        "(x AND y) OR x",
+        "(x AND y) OR (x OR y)"
+      ],
+      "unique_all_expressions": [
+        "x",
+        "x OR y",
+        "(x OR y) AND x",
+        "(x AND y) OR x",
+        "(x AND y) OR (x OR y)"
+      ],
+      "token_usage": {
+        "prompt_tokens": 4296,
+        "completion_tokens": 20779,
+        "total_tokens": 25075
+      },
+      "cost": 0.025075,
+      "errors": [],
+      "validation_failures": {},
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      }
+    },
+    {
+      "observation_set_id": "n2_inputs_01_11_outputs_01",
+      "n_observations": 2,
+      "n_ground_truths": 5,
+      "n_queries": 5,
+      "n_valid": 5,
+      "n_unique_valid": 5,
+      "n_unique_all": 5,
+      "n_recovered_gts": 5,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "all_hypotheses": [
+        "x AND y",
+        "x AND (x OR y)",
+        "x OR (x AND y)",
+        "x",
+        "(x OR y) AND (x AND y)"
+      ],
+      "valid_hypotheses": [
+        "x AND y",
+        "x AND (x OR y)",
+        "x OR (x AND y)",
+        "x",
+        "(x OR y) AND (x AND y)"
+      ],
+      "unique_valid_expressions": [
+        "x AND y",
+        "x AND (x OR y)",
+        "x OR (x AND y)",
+        "x",
+        "(x OR y) AND (x AND y)"
+      ],
+      "unique_all_expressions": [
+        "x AND y",
+        "x AND (x OR y)",
+        "x OR (x AND y)",
+        "x",
+        "(x OR y) AND (x AND y)"
+      ],
+      "token_usage": {
+        "prompt_tokens": 4365,
+        "completion_tokens": 29015,
+        "total_tokens": 33380
+      },
+      "cost": 0.03338,
+      "errors": [],
+      "validation_failures": {},
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      }
+    },
+    {
+      "observation_set_id": "n2_inputs_00_11_outputs_01",
+      "n_observations": 2,
+      "n_ground_truths": 10,
+      "n_queries": 10,
+      "n_valid": 10,
+      "n_unique_valid": 10,
+      "n_unique_all": 10,
+      "n_recovered_gts": 10,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "all_hypotheses": [
+        "x AND y",
+        "x OR y",
+        "(x OR y) AND x",
+        "(x OR y) AND y",
+        "(x AND y) OR x",
+        "(x AND y) OR y",
+        "(x OR y) AND (x AND y)",
+        "(x AND y) OR (x OR y)",
+        "x",
+        "y"
+      ],
+      "valid_hypotheses": [
+        "x AND y",
+        "x OR y",
+        "(x OR y) AND x",
+        "(x OR y) AND y",
+        "(x AND y) OR x",
+        "(x AND y) OR y",
+        "(x OR y) AND (x AND y)",
+        "(x AND y) OR (x OR y)",
+        "x",
+        "y"
+      ],
+      "unique_valid_expressions": [
+        "x AND y",
+        "x OR y",
+        "(x OR y) AND x",
+        "(x OR y) AND y",
+        "(x AND y) OR x",
+        "(x AND y) OR y",
+        "(x OR y) AND (x AND y)",
+        "(x AND y) OR (x OR y)",
+        "x",
+        "y"
+      ],
+      "unique_all_expressions": [
+        "x AND y",
+        "x OR y",
+        "(x OR y) AND x",
+        "(x OR y) AND y",
+        "(x AND y) OR x",
+        "(x AND y) OR y",
+        "(x OR y) AND (x AND y)",
+        "(x AND y) OR (x OR y)",
+        "x",
+        "y"
+      ],
+      "token_usage": {
+        "prompt_tokens": 8973,
+        "completion_tokens": 62374,
+        "total_tokens": 71347
+      },
+      "cost": 0.07134700000000001,
+      "errors": [],
+      "validation_failures": {},
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      }
+    },
+    {
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0101",
+      "n_observations": 4,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_rate": 0.3333333333333333,
+      "in_space_rate": 0.3333333333333333,
+      "valid_rate": 0.3333333333333333,
+      "novelty_rate": 0.3333333333333333,
+      "recovery_rate": 0.3333333333333333,
+      "all_hypotheses": [
+        "y",
+        "[ERROR after 5 attempts] Type: rate_limit_429 | Error querying OpenRouter(qwen/qwen3-235b-a22b:free): 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions",
+        "[ERROR after 5 attempts] Type: rate_limit_429 | Error querying OpenRouter(qwen/qwen3-235b-a22b:free): 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+      ],
+      "valid_hypotheses": [
+        "y"
+      ],
+      "unique_valid_expressions": [
+        "y"
+      ],
+      "unique_all_expressions": [
+        "y"
+      ],
+      "token_usage": {
+        "prompt_tokens": 884,
+        "completion_tokens": 1984,
+        "total_tokens": 2868
+      },
+      "cost": 0.002868,
+      "errors": [
+        {
+          "query_index": 1,
+          "attempt": 5,
+          "error_message": "Error querying OpenRouter(qwen/qwen3-235b-a22b:free): 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions",
+          "error_type": "rate_limit_429"
+        },
+        {
+          "query_index": 2,
+          "attempt": 5,
+          "error_message": "Error querying OpenRouter(qwen/qwen3-235b-a22b:free): 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions",
+          "error_type": "rate_limit_429"
+        }
+      ],
+      "validation_failures": {},
+      "error_summary": {
+        "total_errors": 2,
+        "error_types": {
+          "rate_limit_429": 10
+        }
+      }
+    }
+  ],
+  "total_token_usage": {
+    "prompt_tokens": 20290,
+    "completion_tokens": 118536,
+    "total_tokens": 138826
+  },
+  "total_cost": 0.13882600000000003,
+  "total_errors": 2,
+  "error_types": {
+    "rate_limit_429": 10
+  }
+}

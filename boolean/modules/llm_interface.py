@@ -1,6 +1,8 @@
 import traceback
 import random
 import requests
+import time
+import threading
 from abc import ABC, abstractmethod
 from typing import List, Optional, Dict, Any, Tuple
 import re
@@ -102,7 +104,8 @@ class OpenRouterLLM(LLMInterface):
         api_key: Optional[str] = None,
         temperature: float = 0.7,
         max_tokens: int = 40960,
-        base_url: str = "https://openrouter.ai/api/v1"
+        base_url: str = "https://openrouter.ai/api/v1",
+        min_interval: float = 0.5,
     ):
         """
         Initialize OpenRouter LLM interface.
@@ -128,6 +131,10 @@ class OpenRouterLLM(LLMInterface):
             # "HTTP-Referer":"http://localhost:3000",  # Required by OpenRouter
             # "X-Title": "Cre ativity Benchmark"  # Optional, for OpenRouter dashboard
         }
+        # Simple per-instance rate limiter: ensure at least `min_interval` seconds between requests
+        self.min_interval = float(min_interval)
+        self._last_request_time = 0.0
+        self._req_lock = threading.Lock()
     
     def query(self, prompt: str) -> str:
         """Query OpenRouter API."""
@@ -136,55 +143,75 @@ class OpenRouterLLM(LLMInterface):
     
     def query_with_usage(self, prompt: str) -> Dict[str, Any]:
         """Query OpenRouter API with usage tracking."""
+        # Throttle requests to respect min_interval between calls (simple token-bucket-like)
+        with self._req_lock:
+            now = time.time()
+            elapsed = now - self._last_request_time
+            if elapsed < self.min_interval:
+                to_sleep = self.min_interval - elapsed
+                try:
+                    time.sleep(to_sleep)
+                except Exception:
+                    pass
+            # update last request time to now (after sleep)
+            self._last_request_time = time.time()
+
+        url = f"{self.base_url}/chat/completions"
+        payload = {
+            "model": self.model,
+            "messages": [
+                {"role": "system", "content": "You are an expert in causal inference and graph theory."},
+                {"role": "user", "content": prompt}
+            ],
+            "temperature": self.temperature,
+            "max_tokens": self.max_tokens
+        }
+
+        # Perform request and handle HTTP errors that include Retry-After header
         try:
-            url = f"{self.base_url}/chat/completions"
-            payload = {
-                "model": self.model,
-                "messages": [
-                    {"role": "system", "content": "You are an expert in causal inference and graph theory."},
-                    {"role": "user", "content": prompt}
-                ],
-                "temperature": self.temperature,
-                "max_tokens": self.max_tokens
-            }
-            
             response = requests.post(url, headers=self.headers, json=payload)
+            # Raise for HTTP errors (including 429) so caller's except can detect and backoff
             response.raise_for_status()
-            # print('result0',response)
             result = response.json()
-            # print('result1',result['choices'][0]['message']['content'])
-            # print('result2',result)
-            # Extract usage information
-            usage = result.get('usage', {})
-            usage_data = {
-                'prompt_tokens': usage.get('prompt_tokens', 0),
-                'completion_tokens': usage.get('completion_tokens', 0),
-                'total_tokens': usage.get('total_tokens', 0)
-            }
-            
-            # Calculate cost based on model pricing
-            pricing = self.get_model_pricing()
-            cost = (usage_data['prompt_tokens'] * pricing['input'] + 
-                   usage_data['completion_tokens'] * pricing['output']) / 1_000_000
-            
-            return {
-                'response': result['choices'][0]['message']['content'],
-                'usage': usage_data,
-                'cost': cost
-            }
-            
-        except requests.exceptions.RequestException as e:
-            return {
-                'response': f"Error querying OpenRouter: {str(e)}",
-                'usage': {'prompt_tokens': 0, 'completion_tokens': 0, 'total_tokens': 0},
-                'cost': 0.0
-            }
-        except (KeyError, IndexError) as e:
-            return {
-                'response': f"Error parsing OpenRouter response: {str(e)}",
-                'usage': {'prompt_tokens': 0, 'completion_tokens': 0, 'total_tokens': 0},
-                'cost': 0.0
-            }
+        except requests.exceptions.HTTPError as e:
+            # If server provided Retry-After, respect it before re-raising
+            retry_after = None
+            resp = getattr(e, 'response', None)
+            if resp is not None:
+                retry_hdr = resp.headers.get('Retry-After') if hasattr(resp, 'headers') else None
+                if retry_hdr:
+                    try:
+                        retry_after = int(retry_hdr)
+                    except Exception:
+                        # Could be HTTP date format; ignore parsing complexity for now
+                        retry_after = None
+            # Sleep for server-suggested duration plus jitter
+            if retry_after is not None:
+                try:
+                    time.sleep(float(retry_after) + random.uniform(0, 1.0))
+                except Exception:
+                    pass
+            # re-raise so upper layer can count/handle the error
+            raise
+
+        # Extract usage information
+        usage = result.get('usage', {})
+        usage_data = {
+            'prompt_tokens': usage.get('prompt_tokens', 0),
+            'completion_tokens': usage.get('completion_tokens', 0),
+            'total_tokens': usage.get('total_tokens', 0)
+        }
+
+        # Calculate cost based on model pricing
+        pricing = self.get_model_pricing()
+        cost = (usage_data['prompt_tokens'] * pricing['input'] + 
+               usage_data['completion_tokens'] * pricing['output']) / 1_000_000
+
+        return {
+            'response': result['choices'][0]['message']['content'],
+            'usage': usage_data,
+            'cost': cost
+        }
     
     def get_name(self) -> str:
         """Get the model name."""
@@ -216,7 +243,8 @@ class OpenAILLM(LLMInterface):
         model: str = "gpt-4",
         api_key: Optional[str] = None,
         temperature: float = 0.7,
-        max_tokens: int = 40960
+        max_tokens: int = 40960,
+        base_url: Optional[str] = None
     ):
         """
         Initialize OpenAI LLM interface.
@@ -242,7 +270,29 @@ class OpenAILLM(LLMInterface):
             if not api_key:
                 raise ValueError("OpenAI API key must be provided or set as OPENAI_API_KEY environment variable")
         
-        self.client = openai.OpenAI(api_key=api_key)
+        # Configure OpenAI client to use a custom API base if provided (e.g., yunwu.ai)
+        # Newer openai SDKs allow passing base_url/base_api as a constructor arg; if not,
+        # we fall back to setting the global openai.api_base before creating the client.
+        try:
+            if base_url:
+                try:
+                    # Try constructor param (some SDK versions support this)
+                    self.client = openai.OpenAI(api_key=api_key, base_url=base_url)
+                except TypeError:
+                    # Fallback: set global api_base
+                    try:
+                        setattr(openai, 'api_base', base_url)
+                    except Exception:
+                        pass
+                    self.client = openai.OpenAI(api_key=api_key)
+            else:
+                self.client = openai.OpenAI(api_key=api_key)
+        except Exception:
+            # As a final fallback, set the environment variable used by older SDKs
+            import os as _os
+            if base_url:
+                _os.environ['OPENAI_API_BASE'] = base_url
+            self.client = openai.OpenAI(api_key=api_key)
     
     def query(self, prompt: str) -> str:
         """Query OpenAI API."""
@@ -252,13 +302,15 @@ class OpenAILLM(LLMInterface):
     def query_with_usage(self, prompt: str) -> Dict[str, Any]:
         try:
             # print(self.max_tokens)
+            # Some OpenAI-compatible endpoints or models do not accept the
+            # 'reasoning' parameter (e.g. 'reasoning': {'effort': ...}). Removing
+            # it improves compatibility with various providers (yunwu.ai etc.).
             resp = self.client.responses.create(
                 model=self.model,
                 input=[
                     {"role": "system", "content": "You are an expert in causal inference and graph theory."},
                     {"role": "user", "content": prompt},
                 ],
-                reasoning={"effort": "medium"},
                 max_output_tokens=self.max_tokens
             )
 
