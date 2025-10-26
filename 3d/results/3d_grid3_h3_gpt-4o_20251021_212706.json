@@ -1,0 +1,384 @@
+{
+  "run_id": "20251021_212706",
+  "llm_name": "OpenAI(gpt-4o)",
+  "n_samples": 9,
+  "n_queries_per_sample": null,
+  "query_multiplier": 1.0,
+  "query_mode": "adaptive_1.0x",
+  "seed": 33550336,
+  "timestamp": "2025-10-21T21:32:08.817891",
+  "metadata": {
+    "grid_size": 3,
+    "max_blocks": 1,
+    "max_height": 3,
+    "n_observation_sets": 9,
+    "generated_at": "2025-10-21T21:25:12.751922"
+  },
+  "statistics": {
+    "parse_success_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "var": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "p_value": 0.0
+    },
+    "valid_rate": {
+      "mean": 0.6296296296296295,
+      "std": 0.18885257457751053,
+      "var": 0.03566529492455418,
+      "min": 0.3333333333333333,
+      "max": 1.0,
+      "p_value": 1.3133385806196395e-05
+    },
+    "novelty_rate": {
+      "mean": 0.9629629629629629,
+      "std": 0.10475656017578483,
+      "var": 0.010973936899862828,
+      "min": 0.6666666666666666,
+      "max": 1.0,
+      "p_value": 5.140857577669032e-09
+    },
+    "recovery_rate": {
+      "mean": 0.5925925925925926,
+      "std": 0.13857990321384966,
+      "var": 0.019204389574759943,
+      "min": 0.3333333333333333,
+      "max": 0.6666666666666666,
+      "p_value": 2.0189590952977783e-06
+    }
+  },
+  "token_usage": {
+    "prompt_tokens": 21990,
+    "completion_tokens": 7856,
+    "total_tokens": 29846,
+    "avg_tokens_per_sample": 3316.222222222222,
+    "avg_tokens_per_query": 3316.222222222222
+  },
+  "cost": {
+    "total_cost": 0.13353500000000001,
+    "avg_cost_per_sample": 0.014837222222222224,
+    "avg_cost_per_query": 0.014837222222222224
+  },
+  "error_summary": {
+    "total_errors": 0,
+    "error_types": {},
+    "error_rate": 0.0
+  },
+  "per_sample_results": [
+    {
+      "observation_set_id": "g3_h3_b1_007",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 1,
+      "n_unique": 3,
+      "n_recovered_gts": 1,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.3333333333333333,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.3333333333333333,
+      "token_usage": {
+        "prompt_tokens": 3070,
+        "completion_tokens": 1188,
+        "total_tokens": 4258
+      },
+      "cost": 0.019555,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n1 0 0\n0 0 0\n1 0 0\nLayer 2:\n1 0 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 0 0\nLayer 2:\n0 0 0\n0 0 0\n0 0 0\nLayer 3:\n1 0 0\n0 0 0\n0 0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n1 0 0\n0 0 0\n1 0 0\nLayer 2:\n1 0 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 0 0\nLayer 2:\n0 0 0\n0 0 0\n0 0 0\nLayer 3:\n1 0 0\n0 0 0\n0 0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g3_h3_b1_004",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 2,
+      "n_unique": 3,
+      "n_recovered_gts": 2,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.6666666666666666,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.6666666666666666,
+      "token_usage": {
+        "prompt_tokens": 3070,
+        "completion_tokens": 880,
+        "total_tokens": 3950
+      },
+      "cost": 0.016475,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0 0\n1 0 0\n0 0 0",
+        "Layer 1:\n0 0 0\n1 0 0\n0 0 0\nLayer 2:\n0 0 0\n1 0 0\n0 0 0",
+        "Layer 1:\n0 0 0\n1 0 0\n0 0 0\nLayer 2:\n0 0 0\n1 1 0\n0 0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0 0\n1 0 0\n0 0 0",
+        "Layer 1:\n0 0 0\n1 0 0\n0 0 0\nLayer 2:\n0 0 0\n1 0 0\n0 0 0",
+        "Layer 1:\n0 0 0\n1 0 0\n0 0 0\nLayer 2:\n0 0 0\n1 1 0\n0 0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g3_h3_b1_006",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 2,
+      "n_unique": 3,
+      "n_recovered_gts": 2,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.6666666666666666,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.6666666666666666,
+      "token_usage": {
+        "prompt_tokens": 2302,
+        "completion_tokens": 934,
+        "total_tokens": 3236
+      },
+      "cost": 0.015095,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0 0\n0 0 1\n0 0 0\nLayer 2:\n0 0 0\n0 0 1\n0 0 0",
+        "Layer 1:\n0 0 0\n0 1 1\n0 0 0\nLayer 2:\n0 0 0\n0 0 1\n0 0 0",
+        "Layer 1:\n0 0 0\n0 0 1\n0 0 0\nLayer 2:\n0 0 0\n0 0 1\n0 0 0\nLayer 3:\n0 0 0\n0 0 1\n0 0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0 0\n0 0 1\n0 0 0\nLayer 2:\n0 0 0\n0 0 1\n0 0 0",
+        "Layer 1:\n0 0 0\n0 1 1\n0 0 0\nLayer 2:\n0 0 0\n0 0 1\n0 0 0",
+        "Layer 1:\n0 0 0\n0 0 1\n0 0 0\nLayer 2:\n0 0 0\n0 0 1\n0 0 0\nLayer 3:\n0 0 0\n0 0 1\n0 0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g3_h3_b1_002",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 2,
+      "n_unique": 3,
+      "n_recovered_gts": 2,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.6666666666666666,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.6666666666666666,
+      "token_usage": {
+        "prompt_tokens": 2258,
+        "completion_tokens": 824,
+        "total_tokens": 3082
+      },
+      "cost": 0.013885000000000002,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 0\nLayer 2:\n0 1 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 0\nLayer 2:\n0 0 0\n0 0 0\n0 0 0\nLayer 3:\n0 1 0\n0 0 1\n0 0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 0\nLayer 2:\n0 1 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 0\nLayer 2:\n0 0 0\n0 0 0\n0 0 0\nLayer 3:\n0 1 0\n0 0 1\n0 0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g3_h3_b1_001",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 3,
+      "n_unique": 2,
+      "n_recovered_gts": 2,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.6666666666666666,
+      "recovery_rate": 0.6666666666666666,
+      "token_usage": {
+        "prompt_tokens": 2258,
+        "completion_tokens": 775,
+        "total_tokens": 3033
+      },
+      "cost": 0.013394999999999999,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n1 0 0\n0 0 0\n0 0 0",
+        "Layer 1:\n1 0 0\n0 0 0\n0 0 0\nLayer 2:\n1 0 0\n0 0 0\n0 0 0",
+        "Layer 1:\n1 0 0\n0 0 0\n0 0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n1 0 0\n0 0 0\n0 0 0",
+        "Layer 1:\n1 0 0\n0 0 0\n0 0 0\nLayer 2:\n1 0 0\n0 0 0\n0 0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g3_h3_b1_003",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 2,
+      "n_unique": 3,
+      "n_recovered_gts": 2,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.6666666666666666,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.6666666666666666,
+      "token_usage": {
+        "prompt_tokens": 2236,
+        "completion_tokens": 851,
+        "total_tokens": 3087
+      },
+      "cost": 0.014100000000000001,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0 1\n0 0 0\n0 0 0",
+        "Layer 1:\n1 0 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 0 1\n0 0 0\n0 0 0\nLayer 2:\n0 0 1\n0 0 0\n0 0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0 1\n0 0 0\n0 0 0",
+        "Layer 1:\n1 0 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 0 1\n0 0 0\n0 0 0\nLayer 2:\n0 0 1\n0 0 0\n0 0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g3_h3_b1_005",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 2,
+      "n_unique": 3,
+      "n_recovered_gts": 2,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.6666666666666666,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.6666666666666666,
+      "token_usage": {
+        "prompt_tokens": 2258,
+        "completion_tokens": 995,
+        "total_tokens": 3253
+      },
+      "cost": 0.015595000000000001,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0 0\n0 1 0\n0 0 0",
+        "Layer 1:\n0 0 0\n1 1 1\n0 0 0\nLayer 2:\n0 0 0\n0 1 0\n0 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n0 0 0\nLayer 2:\n0 0 0\n0 1 0\n0 0 0\nLayer 3:\n0 0 0\n0 1 0\n0 0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0 0\n0 1 0\n0 0 0",
+        "Layer 1:\n0 0 0\n1 1 1\n0 0 0\nLayer 2:\n0 0 0\n0 1 0\n0 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n0 0 0\nLayer 2:\n0 0 0\n0 1 0\n0 0 0\nLayer 3:\n0 0 0\n0 1 0\n0 0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g3_h3_b1_008",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 2,
+      "n_unique": 3,
+      "n_recovered_gts": 2,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.6666666666666666,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.6666666666666666,
+      "token_usage": {
+        "prompt_tokens": 2258,
+        "completion_tokens": 780,
+        "total_tokens": 3038
+      },
+      "cost": 0.013445,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0 0\n0 0 0\n0 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n0 1 0\nLayer 2:\n0 0 0\n0 0 0\n0 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n0 1 0\nLayer 2:\n0 0 0\n0 1 0\n0 1 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0 0\n0 0 0\n0 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n0 1 0\nLayer 2:\n0 0 0\n0 0 0\n0 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n0 1 0\nLayer 2:\n0 0 0\n0 1 0\n0 1 0"
+      ]
+    },
+    {
+      "observation_set_id": "g3_h3_b1_009",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 1,
+      "n_unique": 3,
+      "n_recovered_gts": 1,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.3333333333333333,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.3333333333333333,
+      "token_usage": {
+        "prompt_tokens": 2280,
+        "completion_tokens": 629,
+        "total_tokens": 2909
+      },
+      "cost": 0.01199,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 0 1\n0 0 0\n0 0 0\nLayer 2:\n0 0 1\n0 0 0\n0 0 0\nLayer 3:\n0 0 1\n0 0 0\n0 0 0",
+        "Layer 1:\n0 0 1\n0 0 0\n0 0 1\nLayer 2:\n0 0 1\n0 0 0\n0 0 1"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 0 1\n0 0 0\n0 0 0\nLayer 2:\n0 0 1\n0 0 0\n0 0 0\nLayer 3:\n0 0 1\n0 0 0\n0 0 0",
+        "Layer 1:\n0 0 1\n0 0 0\n0 0 1\nLayer 2:\n0 0 1\n0 0 0\n0 0 1"
+      ]
+    }
+  ]
+}

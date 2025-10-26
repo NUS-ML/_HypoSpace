@@ -2,11 +2,11 @@ llm:
   type: openai
   models:
     openrouter: Null
-    openai: "gpt-4o"
+    openai: "gpt-5"
     anthropic: Null
   api_keys:
     openrouter: ""
-    openai: "sk-3XofXZWNFtpr5RLWwUWfWJXFzFuBgQmrZ7yZ5wpcxjwr8VevcQdn"
+    openai: "sk-GTbTKP5X8ZaZHL8kcUWtLBaiJkVow6hsnbhb8qb1ZtYR5pTqkDuu"
     anthropic: ""
   temperature: 0.7
 
