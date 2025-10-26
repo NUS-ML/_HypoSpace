@@ -1,0 +1,9 @@
+usage: run_causal_benchmark.py [-h] --dataset DATASET --config CONFIG
+                               [--n-samples N_SAMPLES]
+                               [--n-observations-filter N_OBSERVATIONS_FILTER]
+                               [--gt-filter GT_FILTER] [--n-queries N_QUERIES]
+                               [--query-multiplier QUERY_MULTIPLIER]
+                               [--max-retries MAX_RETRIES] [--seed SEED]
+                               [--checkpoint-dir CHECKPOINT_DIR]
+                               [--output OUTPUT] [--verbose] [--quiet]
+run_causal_benchmark.py: error: the following arguments are required: --dataset

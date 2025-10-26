@@ -1,0 +1,467 @@
+Inferred max_edges=3 from ground truth graphs
+Loaded complete dataset with 61 observation sets
+Nodes: A, B, C
+Max edges in hypothesis space: 3
+
+============================================================
+ENHANCED CAUSAL BENCHMARK CONFIGURATION
+============================================================
+Dataset: datasets/node03/n3_all_observations.json
+LLM Type: openai
+Model: gpt-5
+Temperature: 0.7
+Samples: 20
+Queries per sample: 1.0x ground truths (adaptive)
+Max retries: 3
+Seed: 33550336
+Checkpoint dir: checkpoints
+Output: results/n3_all_observations_gpt-5.json
+============================================================
+
+Running Enhanced Causal Benchmark
+LLM: OpenAI(gpt-5)
+Sampling 20 observation sets
+Queries per sample: 1.0x number of ground truths (adaptive)
+Max retries: 3
+Checkpoint file: checkpoints/checkpoint_causal_enhanced_OpenAI_gpt-5__20251021_210712.json
+--------------------------------------------------
+
+Sample 1/20
+  Observation set ID: n3_006
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+-------
+
+Graph: B->A
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.009471
+
+Sample 2/20
+  Observation set ID: n3_017
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+-------
+
+Graph: A->B, A->C
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.008231
+
+Sample 3/20
+  Observation set ID: n2_016
+  Number of observations: 2
+  Number of ground truths: 2
+  Using 2 queries (1.0x 2 ground truths)
+-------
+
+Graph: C->A, A->B
+-------
+
+Graph: C->A, C->B, A->B
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.041435
+
+Sample 4/20
+  Observation set ID: n3_004
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+-------
+
+Graph: C->A, C->B
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.005671
+
+Sample 5/20
+  Observation set ID: n2_022
+  Number of observations: 2
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+-------
+
+Graph: C->B
+-------
+
+Graph: A->C, C->B
+-------
+
+Graph: A->B, C->B
+-------
+
+Graph: A->B, A->C, C->B
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.093062
+
+Sample 6/20
+  Observation set ID: n3_010
+  Number of observations: 3
+  Number of ground truths: 2
+  Using 2 queries (1.0x 2 ground truths)
+-------
+
+Graph: B->A, B->C, C->A
+-------
+
+Graph: B->C, C->A
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.027398
+
+Sample 7/20
+  Observation set ID: n2_003
+  Number of observations: 2
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+-------
+
+Graph: B->A
+-------
+
+Graph: C->B, B->A
+-------
+
+Graph: B->A, C->A
+-------
+
+Graph: C->B, C->A, B->A
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.091782
+
+Sample 8/20
+  Observation set ID: n2_029
+  Number of observations: 2
+  Number of ground truths: 3
+  Using 3 queries (1.0x 3 ground truths)
+-------
+
+Graph: B->A, A->C
+-------
+
+Graph: B->A, B->C
+-------
+
+Graph: B->A, B->C, A->C
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.065030
+
+Sample 9/20
+  Observation set ID: n3_014
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+-------
+
+Graph: A->B
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.016511
+
+Sample 10/20
+  Observation set ID: n3_013
+  Number of observations: 3
+  Number of ground truths: 2
+  Using 2 queries (1.0x 2 ground truths)
+-------
+
+Graph: B->A, A->C
+-------
+
+Graph: B->A, A->C, B->C
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.028673
+
+Sample 11/20
+  Observation set ID: n1_005
+  Number of observations: 1
+  Number of ground truths: 12
+  Using 12 queries (1.0x 12 ground truths)
+-------
+
+Graph: No edges
+-------
+
+Graph: A->B, A->C, C->B
+-------
+
+Graph: A->B, C->A
+-------
+
+Graph: C->B
+-------
+
+Graph: A->B
+-------
+
+Graph: A->C
+-------
+
+Graph: C->A, C->B
+-------
+
+Graph: C->A
+-------
+
+Graph: A->B, C->B
+-------
+
+Graph: A->C, C->B
+-------
+
+Graph: A->B, A->C
+-------
+
+Graph: C->A, A->B, C->B
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.208289
+
+Sample 12/20
+  Observation set ID: n2_023
+  Number of observations: 2
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+-------
+
+Graph: C->A
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.009453
+
+Sample 13/20
+  Observation set ID: n2_008
+  Number of observations: 2
+  Number of ground truths: 3
+  Using 3 queries (1.0x 3 ground truths)
+-------
+
+Graph: C->A, C->B
+-------
+
+Graph: C->B, B->A
+-------
+
+Graph: C->A, C->B, B->A
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.052230
+
+Sample 14/20
+  Observation set ID: n1_011
+  Number of observations: 1
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+-------
+
+Graph: C->A
+-------
+
+Graph: B->C, C->A
+-------
+
+Graph: B->A, C->A
+-------
+
+Graph: B->C, B->A, C->A
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.069307
+
+Sample 15/20
+  Observation set ID: n1_004
+  Number of observations: 1
+  Number of ground truths: 5
+  Using 5 queries (1.0x 5 ground truths)
+-------
+
+Graph: A->B, A->C
+-------
+
+Graph: A->B, B->C
+-------
+
+Graph: A->C, C->B
+-------
+
+Graph: A->B, A->C, B->C
+-------
+
+Graph: A->B, A->C, C->B
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.059089
+
+Sample 16/20
+  Observation set ID: n3_003
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+-------
+
+Graph: C->A
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.010751
+
+Sample 17/20
+  Observation set ID: n2_014
+  Number of observations: 2
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+-------
+
+Graph: A->B
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.015213
+
+Sample 18/20
+  Observation set ID: n2_010
+  Number of observations: 2
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+-------
+
+Graph: A->C, B->C
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.010773
+
+Sample 19/20
+  Observation set ID: n2_007
+  Number of observations: 2
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+-------
+
+Graph: C->A
+-------
+
+Graph: B->A, C->A
+-------
+
+Graph: B->C, C->A
+-------
+
+Graph: B->A, B->C, C->A
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.090503
+
+Sample 20/20
+  Observation set ID: n1_003
+  Number of observations: 1
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+-------
+
+Graph: A->B
+-------
+
+Graph: C->A, A->B
+-------
+
+Graph: A->B, C->B
+-------
+
+Graph: C->A, C->B, A->B
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.068667
+/Users/dorian/Documents/Programme/NUS311/_HypoSpace/.venv/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:579: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  res = hypotest_fun_out(*samples, **kwds)
+
+============================================================
+ENHANCED BENCHMARK RESULTS SUMMARY
+============================================================
+Samples evaluated: 20/20
+Max edges constraint: 3
+
+Parse Success Rate:
+  Mean ± Std: 1.000 ± 0.000
+  Variance: 0.000
+  Range: [1.000, 1.000]
+  p-value: 0.0000
+
+Valid Rate:
+  Mean ± Std: 1.000 ± 0.000
+  Variance: 0.000
+  Range: [1.000, 1.000]
+  p-value: 0.0000
+
+Novelty Rate:
+  Mean ± Std: 1.000 ± 0.000
+  Variance: 0.000
+  Range: [1.000, 1.000]
+  p-value: 0.0000
+
+Recovery Rate:
+  Mean ± Std: 1.000 ± 0.000
+  Variance: 0.000
+  Range: [1.000, 1.000]
+  p-value: 0.0000
+
+Token Usage:
+  Total tokens: 112,804
+  Prompt tokens: 16,743
+  Completion tokens: 96,061
+  Avg tokens/sample: 5640.2
+  Avg tokens/query: 5640.2
+
+Cost:
+  Total cost: $0.9815
+  Avg cost/sample: $0.0491
+  Avg cost/query: $0.049077
+============================================================
+
+Cleaned up checkpoint: checkpoints/checkpoint_causal_enhanced_OpenAI_gpt-5__20251021_210712.json
+
+Final results saved to: results/n3_all_observations_gpt-5.json

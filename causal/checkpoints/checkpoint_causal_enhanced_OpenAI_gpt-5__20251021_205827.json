@@ -1,0 +1,1278 @@
+{
+  "run_id": "20251021_205827",
+  "llm_name": "OpenAI(gpt-5)",
+  "n_samples": 20,
+  "n_queries_per_sample": null,
+  "query_multiplier": 1.0,
+  "seed": 33550336,
+  "timestamp": "2025-10-21T21:00:05.569712",
+  "results": [
+    {
+      "observation_set_id": "n3_006",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 0d88e974-28ca-4af8-b8b2-3beec3d8951d)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 1,
+        "error_types": {
+          "forbidden_error": 1,
+          "http_error_400": 2
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_017",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 8cc766aa-856c-4393-9c3b-4ee15f38df2f)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 1,
+        "error_types": {
+          "http_error_400": 3
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_016",
+      "n_observations": 2,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 0aff2a81-09c1-4c82-a15a-8b81142fa1ca)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 06513250-d215-4b33-819b-db77e2f7af27)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 2,
+        "error_types": {
+          "http_error_400": 6
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_004",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: a63b2f9e-39e8-4232-a7cd-f0a317e68c26)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 1,
+        "error_types": {
+          "http_error_400": 3
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_022",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 1f3faf30-ad34-4f5b-bf7d-f25db8bf2045)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 96b435b4-90ad-4525-86e7-e1d47c2b4627)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 2,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 05a16924-f078-4e82-9adc-fdc8971f3fba)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 3,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: d4e1e959-8e9e-48a1-8910-aa6ca9a7c339)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 4,
+        "error_types": {
+          "forbidden_error": 1,
+          "http_error_400": 11
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_010",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 7dcc8cbb-fdcf-476a-9425-bd1d717c1892)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c01076ae-d73a-48cd-a1f5-b175403b7501)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "forbidden_error"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 2,
+        "error_types": {
+          "auth_error": 2,
+          "http_error_400": 3,
+          "forbidden_error": 1
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_003",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: cb9142c5-e831-4c97-8be5-4843f1b33a00)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 6f414bcf-c696-44fa-a6d2-bba03f251f71)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 2,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c3fe9ea8-d971-4ad8-ba7f-62e0e214d929)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 3,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: f15851d9-4b40-47e6-bd4f-99b5e4aabb39)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 4,
+        "error_types": {
+          "http_error_400": 11,
+          "auth_error": 1
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_029",
+      "n_observations": 2,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 3eb09abf-9202-4d9d-bd99-7b8734ea78d3)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 081fba94-b68a-4a8f-a1e8-88f04117a74d)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 2,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: dade8af9-1718-49c7-ae09-c2a6023931d6)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 3,
+        "error_types": {
+          "server_error_500": 1,
+          "http_error_400": 8
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_014",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 2d22478f-08e8-4d35-a13b-3f44db6b073f)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 1,
+        "error_types": {
+          "http_error_400": 3
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_013",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: ad6721c4-398f-47df-aeda-83923606833b)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 0f5e00fc-916b-497a-a082-4b8c83f3ac9f)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 2,
+        "error_types": {
+          "http_error_400": 6
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_005",
+      "n_observations": 1,
+      "n_ground_truths": 12,
+      "n_queries": 12,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c644f213-3f27-43ee-8ffa-29a6b7eb1646)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 926069a5-91f0-455d-8f53-3de1a843b13a)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 2,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 53beaab8-cb4f-4c62-ac46-abf39573cdbf)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 3,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 4fc6f092-300f-4099-990c-e5b586311f85)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 4,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c71ec3b3-15d2-4c8d-bff3-61c9ebdb8992)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 5,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 5913bc57-e763-4453-bb80-88a010c55259)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 6,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 2d635460-ac21-4ccf-8303-37f98caae18c)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 7,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 42a87f95-81bc-4f77-a46d-476a58e88e1f)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 8,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 90c2f368-78d2-40ec-aa5d-4894c4aecaad)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 9,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: b0ed78f6-e485-41b3-8d11-9f71feea5d3b)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 10,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c527bf6c-37a7-40eb-b215-21912b277ad2)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 11,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: f38b0abc-af06-49cb-80aa-b3ca8e175136)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 12,
+        "error_types": {
+          "http_error_400": 35,
+          "bad_gateway_502": 1
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_023",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 8811c0b2-5be2-471c-8d1f-4f065a8d2eb5)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 1,
+        "error_types": {
+          "http_error_400": 3
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_008",
+      "n_observations": 2,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 2426576f-1e0d-465e-a7b9-5e29399b0cef)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 6324352d-d2bc-4f38-ae45-6386e69d7f21)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 2,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: f9d2d2ed-562f-4bc8-a76f-bc3f8b108e99)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 3,
+        "error_types": {
+          "http_error_400": 9
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_011",
+      "n_observations": 1,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 657f5b82-c0cc-41e4-9fa5-97e3b3bfee02)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c29f92f3-f48d-45d0-9cf2-156006b314d5)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 2,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: b1a7360d-3e0f-4e6c-8550-703976bbb6a1)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 3,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 157b48c8-a78b-4be3-8362-469b685162cb)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 4,
+        "error_types": {
+          "http_error_400": 11,
+          "server_error_500": 1
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_004",
+      "n_observations": 1,
+      "n_ground_truths": 5,
+      "n_queries": 5,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c2f3b184-ccbd-4d9b-adea-6074f0e13e62)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c0fd94d8-7ba0-4524-b3f8-46c0d4d9cbdd)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 2,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 2d818915-f829-4a21-b323-9434ca776745)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 3,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 0141ddf7-a273-4298-8a29-a027345d3689)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "rate_limit_429"
+        },
+        {
+          "query_index": 4,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 55da3c48-63f9-462e-918a-3747285d1642)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 5,
+        "error_types": {
+          "http_error_400": 14,
+          "rate_limit_429": 1
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_003",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c58ba091-e089-4a3b-937a-e899b58e423b)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 1,
+        "error_types": {
+          "http_error_400": 3
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_014",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: fde3c542-22c0-4e69-a7b8-94cd9d0c8625)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 1,
+        "error_types": {
+          "http_error_400": 3
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_010",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: a4ad4248-074c-4b59-b41e-e66c9948fff7)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 1,
+        "error_types": {
+          "http_error_400": 3
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_007",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "errors": [
+        {
+          "query_index": 0,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 397764cd-0e47-4c14-998d-0d18c1d7c8ac)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 1,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 8c476e35-be63-4b2f-a6c8-071292bee43b)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 2,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 4b34eeaa-130c-43aa-ac5c-becdc7c65de5)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        },
+        {
+          "query_index": 3,
+          "attempt": 3,
+          "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: ae3078ef-4cc2-446e-8c5c-c58e1618e0e3)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+          "error_type": "http_error_400"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 4,
+        "error_types": {
+          "http_error_400": 12
+        }
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    }
+  ],
+  "total_prompt_tokens": 0,
+  "total_completion_tokens": 0,
+  "total_tokens": 0,
+  "total_cost": 0.0,
+  "all_errors": [
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 0d88e974-28ca-4af8-b8b2-3beec3d8951d)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 8cc766aa-856c-4393-9c3b-4ee15f38df2f)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 0aff2a81-09c1-4c82-a15a-8b81142fa1ca)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 06513250-d215-4b33-819b-db77e2f7af27)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: a63b2f9e-39e8-4232-a7cd-f0a317e68c26)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 1f3faf30-ad34-4f5b-bf7d-f25db8bf2045)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 96b435b4-90ad-4525-86e7-e1d47c2b4627)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 2,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 05a16924-f078-4e82-9adc-fdc8971f3fba)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 3,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: d4e1e959-8e9e-48a1-8910-aa6ca9a7c339)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 7dcc8cbb-fdcf-476a-9425-bd1d717c1892)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c01076ae-d73a-48cd-a1f5-b175403b7501)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "forbidden_error"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: cb9142c5-e831-4c97-8be5-4843f1b33a00)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 6f414bcf-c696-44fa-a6d2-bba03f251f71)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 2,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c3fe9ea8-d971-4ad8-ba7f-62e0e214d929)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 3,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: f15851d9-4b40-47e6-bd4f-99b5e4aabb39)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 3eb09abf-9202-4d9d-bd99-7b8734ea78d3)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 081fba94-b68a-4a8f-a1e8-88f04117a74d)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 2,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: dade8af9-1718-49c7-ae09-c2a6023931d6)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 2d22478f-08e8-4d35-a13b-3f44db6b073f)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: ad6721c4-398f-47df-aeda-83923606833b)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 0f5e00fc-916b-497a-a082-4b8c83f3ac9f)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c644f213-3f27-43ee-8ffa-29a6b7eb1646)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 926069a5-91f0-455d-8f53-3de1a843b13a)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 2,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 53beaab8-cb4f-4c62-ac46-abf39573cdbf)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 3,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 4fc6f092-300f-4099-990c-e5b586311f85)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 4,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c71ec3b3-15d2-4c8d-bff3-61c9ebdb8992)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 5,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 5913bc57-e763-4453-bb80-88a010c55259)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 6,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 2d635460-ac21-4ccf-8303-37f98caae18c)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 7,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 42a87f95-81bc-4f77-a46d-476a58e88e1f)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 8,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 90c2f368-78d2-40ec-aa5d-4894c4aecaad)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 9,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: b0ed78f6-e485-41b3-8d11-9f71feea5d3b)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 10,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c527bf6c-37a7-40eb-b215-21912b277ad2)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 11,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: f38b0abc-af06-49cb-80aa-b3ca8e175136)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 8811c0b2-5be2-471c-8d1f-4f065a8d2eb5)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 2426576f-1e0d-465e-a7b9-5e29399b0cef)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 6324352d-d2bc-4f38-ae45-6386e69d7f21)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 2,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: f9d2d2ed-562f-4bc8-a76f-bc3f8b108e99)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 657f5b82-c0cc-41e4-9fa5-97e3b3bfee02)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c29f92f3-f48d-45d0-9cf2-156006b314d5)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 2,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: b1a7360d-3e0f-4e6c-8550-703976bbb6a1)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 3,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 157b48c8-a78b-4be3-8362-469b685162cb)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c2f3b184-ccbd-4d9b-adea-6074f0e13e62)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c0fd94d8-7ba0-4524-b3f8-46c0d4d9cbdd)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 2,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 2d818915-f829-4a21-b323-9434ca776745)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 3,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 0141ddf7-a273-4298-8a29-a027345d3689)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "rate_limit_429"
+    },
+    {
+      "query_index": 4,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 55da3c48-63f9-462e-918a-3747285d1642)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: c58ba091-e089-4a3b-937a-e899b58e423b)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: fde3c542-22c0-4e69-a7b8-94cd9d0c8625)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: a4ad4248-074c-4b59-b41e-e66c9948fff7)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 0,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 397764cd-0e47-4c14-998d-0d18c1d7c8ac)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 1,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 8c476e35-be63-4b2f-a6c8-071292bee43b)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 2,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: 4b34eeaa-130c-43aa-ac5c-becdc7c65de5)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    },
+    {
+      "query_index": 3,
+      "attempt": 3,
+      "error_message": "Error querying OpenAI: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead. (request id: ae3078ef-4cc2-446e-8c5c-c58e1618e0e3)\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}, 'status_code': 400, 'LocalError': False}",
+      "error_type": "http_error_400"
+    }
+  ],
+  "total_error_counts": {
+    "forbidden_error": 3,
+    "http_error_400": 149,
+    "auth_error": 3,
+    "server_error_500": 2,
+    "bad_gateway_502": 1,
+    "rate_limit_429": 1
+  }
+}

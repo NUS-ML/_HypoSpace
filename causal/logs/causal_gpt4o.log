@@ -1,0 +1,494 @@
+Inferred max_edges=3 from ground truth graphs
+Loaded complete dataset with 61 observation sets
+Nodes: A, B, C
+Max edges in hypothesis space: 3
+
+============================================================
+ENHANCED CAUSAL BENCHMARK CONFIGURATION
+============================================================
+Dataset: datasets/node03/n3_all_observations.json
+LLM Type: openai
+Model: gpt-4o-mini
+Temperature: 0.7
+Samples: 30
+Queries per sample: 1.0x ground truths (adaptive)
+Max retries: 3
+Seed: 33550336
+Checkpoint dir: checkpoints
+Output: results/n3_all_observations_gpt-4o-mini.json
+============================================================
+
+Running Enhanced Causal Benchmark
+LLM: OpenAI(gpt-4o-mini)
+Sampling 30 observation sets
+Queries per sample: 1.0x number of ground truths (adaptive)
+Max retries: 3
+Checkpoint file: checkpoints/checkpoint_causal_enhanced_OpenAI_gpt-4o-mini__20251026_150009.json
+--------------------------------------------------
+
+Sample 1/30
+  Observation set ID: n3_006
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: A->B
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000048
+
+Sample 2/30
+  Observation set ID: n3_017
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: A->B, A->C
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.000051
+
+Sample 3/30
+  Observation set ID: n2_016
+  Number of observations: 2
+  Number of ground truths: 2
+  Using 2 queries (1.0x 2 ground truths)
+OpenAI response: Graph: A->B, C->A
+OpenAI response: Graph: A->C, C->B
+  Parse success rate: 100.00%
+  Valid rate: 50.00%
+  Novelty rate: 100.00%
+  Recovery rate: 50.00%
+  Cost: $0.000097
+
+Sample 4/30
+  Observation set ID: n3_004
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: A->C, B->C
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000051
+
+Sample 5/30
+  Observation set ID: n2_022
+  Number of observations: 2
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+OpenAI response: Graph: B->C
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->C, B->C
+OpenAI response: Graph: A->B, A->C
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 75.00%
+  Recovery rate: 0.00%
+  Cost: $0.000198
+
+Sample 6/30
+  Observation set ID: n3_010
+  Number of observations: 3
+  Number of ground truths: 2
+  Using 2 queries (1.0x 2 ground truths)
+OpenAI response: Graph: A->B
+OpenAI response: Graph: A->C
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000097
+
+Sample 7/30
+  Observation set ID: n2_003
+  Number of observations: 2
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+OpenAI response: Graph: A->B
+OpenAI response: Graph: A->C
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: B->A, B->C
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000194
+
+Sample 8/30
+  Observation set ID: n2_029
+  Number of observations: 2
+  Number of ground truths: 3
+  Using 3 queries (1.0x 3 ground truths)
+OpenAI response: Graph: B->A, B->C
+OpenAI response: Graph: A->C, B->A
+OpenAI response: Graph: A->B, A->C
+  Parse success rate: 100.00%
+  Valid rate: 66.67%
+  Novelty rate: 100.00%
+  Recovery rate: 66.67%
+  Cost: $0.000149
+
+Sample 9/30
+  Observation set ID: n3_014
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: A->B
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.000048
+
+Sample 10/30
+  Observation set ID: n3_013
+  Number of observations: 3
+  Number of ground truths: 2
+  Using 2 queries (1.0x 2 ground truths)
+OpenAI response: Graph: A->C, B->C
+OpenAI response: Graph: A->B, A->C
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000103
+
+Sample 11/30
+  Observation set ID: n1_005
+  Number of observations: 1
+  Number of ground truths: 12
+  Using 12 queries (1.0x 12 ground truths)
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->C, B->C
+OpenAI response: Graph: A->B, A->C, B->C
+OpenAI response: Graph: A->B, B->C
+OpenAI response: Graph: A->C
+OpenAI response: Graph: A->B, B->C
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->B, B->C
+OpenAI response: Graph: A->C, B->C
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->B, B->C
+OpenAI response: Graph: A->C
+  Parse success rate: 100.00%
+  Valid rate: 41.67%
+  Novelty rate: 41.67%
+  Recovery rate: 16.67%
+  Cost: $0.000648
+
+Sample 12/30
+  Observation set ID: n2_023
+  Number of observations: 2
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: B->A, C->A
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000048
+
+Sample 13/30
+  Observation set ID: n2_008
+  Number of observations: 2
+  Number of ground truths: 3
+  Using 3 queries (1.0x 3 ground truths)
+OpenAI response: Graph: A->C, B->C
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->C, B->A
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000149
+
+Sample 14/30
+  Observation set ID: n1_011
+  Number of observations: 1
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+OpenAI response: Graph: C->A
+OpenAI response: Graph: B->A, C->B
+OpenAI response: Graph: A->C
+OpenAI response: Graph: C->B, B->A
+  Parse success rate: 100.00%
+  Valid rate: 25.00%
+  Novelty rate: 75.00%
+  Recovery rate: 25.00%
+  Cost: $0.000186
+
+Sample 15/30
+  Observation set ID: n1_004
+  Number of observations: 1
+  Number of ground truths: 5
+  Using 5 queries (1.0x 5 ground truths)
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->C, B->C
+OpenAI response: Graph: A->B, A->C, B->C
+OpenAI response: Graph: A->B, C->B
+OpenAI response: Graph: A->B, A->C, C->B
+  Parse success rate: 100.00%
+  Valid rate: 60.00%
+  Novelty rate: 100.00%
+  Recovery rate: 60.00%
+  Cost: $0.000251
+
+Sample 16/30
+  Observation set ID: n3_003
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: A->C
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000048
+
+Sample 17/30
+  Observation set ID: n2_014
+  Number of observations: 2
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: A->B
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.000046
+
+Sample 18/30
+  Observation set ID: n2_010
+  Number of observations: 2
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: A->C, B->C
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.000048
+
+Sample 19/30
+  Observation set ID: n2_007
+  Number of observations: 2
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+OpenAI response: Graph: A->C
+OpenAI response: Graph: A->C, B->C
+OpenAI response: Graph: A->B, B->C
+OpenAI response: Graph: A->C, A->B
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000198
+
+Sample 20/30
+  Observation set ID: n1_003
+  Number of observations: 1
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+OpenAI response: Graph: A->B
+OpenAI response: Graph: A->C
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->B, B->C
+  Parse success rate: 100.00%
+  Valid rate: 25.00%
+  Novelty rate: 100.00%
+  Recovery rate: 25.00%
+  Cost: $0.000185
+
+Sample 21/30
+  Observation set ID: n3_008
+  Number of observations: 3
+  Number of ground truths: 2
+  Using 2 queries (1.0x 2 ground truths)
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->C, B->C
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000103
+
+Sample 22/30
+  Observation set ID: n2_027
+  Number of observations: 2
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: B->A, C->A
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.000048
+
+Sample 23/30
+  Observation set ID: n1_007
+  Number of observations: 1
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+OpenAI response: Graph: B->A
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->C, B->C
+  Parse success rate: 100.00%
+  Valid rate: 25.00%
+  Novelty rate: 75.00%
+  Recovery rate: 25.00%
+  Cost: $0.000189
+
+Sample 24/30
+  Observation set ID: n1_009
+  Number of observations: 1
+  Number of ground truths: 12
+  Using 12 queries (1.0x 12 ground truths)
+OpenAI response: Graph: No edges
+OpenAI response: Graph: A->C
+OpenAI response: Graph: A->C, B->C
+OpenAI response: Graph: A->C, A->B
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->B, B->C
+OpenAI response: Graph: A->B, B->C
+OpenAI response: Graph: A->B, C->A
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->C, B->A
+  Parse success rate: 100.00%
+  Valid rate: 91.67%
+  Novelty rate: 58.33%
+  Recovery rate: 50.00%
+  Cost: $0.000630
+
+Sample 25/30
+  Observation set ID: n2_021
+  Number of observations: 2
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->C, B->C
+OpenAI response: Graph: A->B, A->C, B->C
+OpenAI response: Graph: No edges
+  Parse success rate: 100.00%
+  Valid rate: 50.00%
+  Novelty rate: 100.00%
+  Recovery rate: 50.00%
+  Cost: $0.000202
+
+Sample 26/30
+  Observation set ID: n2_025
+  Number of observations: 2
+  Number of ground truths: 4
+  Using 4 queries (1.0x 4 ground truths)
+OpenAI response: Graph: B->C
+OpenAI response: Graph: A->B, A->C
+OpenAI response: Graph: A->C
+OpenAI response: Graph: A->B, B->C
+  Parse success rate: 100.00%
+  Valid rate: 50.00%
+  Novelty rate: 100.00%
+  Recovery rate: 50.00%
+  Cost: $0.000195
+
+Sample 27/30
+  Observation set ID: n2_009
+  Number of observations: 2
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: A->C
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.000046
+
+Sample 28/30
+  Observation set ID: n3_011
+  Number of observations: 3
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: A->C
+  Parse success rate: 100.00%
+  Valid rate: 100.00%
+  Novelty rate: 100.00%
+  Recovery rate: 100.00%
+  Cost: $0.000048
+
+Sample 29/30
+  Observation set ID: n2_026
+  Number of observations: 2
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: B->A, C->B
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000048
+
+Sample 30/30
+  Observation set ID: n2_002
+  Number of observations: 2
+  Number of ground truths: 1
+  Using 1 queries (1.0x 1 ground truths)
+OpenAI response: Graph: A->C
+  Parse success rate: 100.00%
+  Valid rate: 0.00%
+  Novelty rate: 100.00%
+  Recovery rate: 0.00%
+  Cost: $0.000046
+/Users/dorian/Documents/Programme/NUS311/_HypoSpace/.venv/lib/python3.12/site-packages/scipy/stats/_axis_nan_policy.py:579: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  res = hypotest_fun_out(*samples, **kwds)
+
+============================================================
+ENHANCED BENCHMARK RESULTS SUMMARY
+============================================================
+Samples evaluated: 30/30
+Max edges constraint: 3
+
+Parse Success Rate:
+  Mean ± Std: 1.000 ± 0.000
+  Variance: 0.000
+  Range: [1.000, 1.000]
+  p-value: 0.0000
+
+Valid Rate:
+  Mean ± Std: 0.395 ± 0.411
+  Variance: 0.169
+  Range: [0.000, 1.000]
+  p-value: 0.0000
+
+Novelty Rate:
+  Mean ± Std: 0.942 ± 0.141
+  Variance: 0.020
+  Range: [0.417, 1.000]
+  p-value: 0.0000
+
+Recovery Rate:
+  Mean ± Std: 0.373 ± 0.402
+  Variance: 0.162
+  Range: [0.000, 1.000]
+  p-value: 0.0000
+
+Token Usage:
+  Total tokens: 26,958
+  Prompt tokens: 26,166
+  Completion tokens: 792
+  Avg tokens/sample: 898.6
+  Avg tokens/query: 898.6
+
+Cost:
+  Total cost: $0.0044
+  Avg cost/sample: $0.0001
+  Avg cost/query: $0.000147
+============================================================
+
+Cleaned up checkpoint: checkpoints/checkpoint_causal_enhanced_OpenAI_gpt-4o-mini__20251026_150009.json
+
+Final results saved to: results/n3_all_observations_gpt-4o-mini.json
