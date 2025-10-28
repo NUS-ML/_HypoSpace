@@ -1,0 +1,59 @@
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=1, y=0) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=1, y=0) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=0, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=0, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=1, y=0) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=1, y=0) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=1, y=0) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=1, y=0) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 0\n(x=1, y=0) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x & y\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 0\n(x=1, y=0) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 1\n(x=1, y=0) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 1\n(x=1, y=0) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x | y\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 0\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~y\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 0\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 1\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 1\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=1, y=0) -> 0\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=1, y=0) -> 0\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=1, y=0) -> 1\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~y\n"}
+{"prompt": "Observations:\n(x=1, y=0) -> 1\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 0\n(x=1, y=0) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x & y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 0\n(x=1, y=0) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 1\n(x=1, y=0) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 1\n(x=1, y=0) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x | y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=0, y=1) -> 0\n(x=1, y=0) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x & ~y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=0, y=1) -> 0\n(x=1, y=0) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=0, y=1) -> 1\n(x=1, y=0) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 0\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 1\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=0, y=1) -> 0\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=0, y=1) -> 1\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=1, y=0) -> 0\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=1, y=0) -> 1\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=1, y=0) -> 0\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=1, y=0) -> 1\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~y\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 0\n(x=1, y=0) -> 0\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x & ~y\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 0\n(x=1, y=0) -> 0\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x & y\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 0\n(x=1, y=0) -> 1\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~y\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 0\n(x=1, y=0) -> 1\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 1\n(x=1, y=0) -> 0\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 1\n(x=1, y=0) -> 0\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=0, y=1) -> 1\n(x=1, y=0) -> 1\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x | y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 0\n(x=1, y=0) -> 0\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x & y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 0\n(x=1, y=0) -> 1\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 1\n(x=1, y=0) -> 0\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 0\n(x=0, y=1) -> 1\n(x=1, y=0) -> 1\n(x=1, y=1) -> 1\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " x | y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=0, y=1) -> 0\n(x=1, y=0) -> 0\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x & ~y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=0, y=1) -> 0\n(x=1, y=0) -> 1\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~y\n"}
+{"prompt": "Observations:\n(x=0, y=0) -> 1\n(x=0, y=1) -> 1\n(x=1, y=0) -> 0\n(x=1, y=1) -> 0\n\nProvide a Boolean expression over variables x and y that matches the observations.\n", "completion": " ~x\n"}
