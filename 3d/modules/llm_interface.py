@@ -1,3 +1,5 @@
+import requests
+import json
 import traceback
 import random
 import requests
@@ -5,6 +7,7 @@ from abc import ABC, abstractmethod
 from typing import List, Optional, Dict, Any, Tuple
 import re
 from .models import CausalGraph
+import ollama
 
 
 def _extract_text(resp) -> str:
@@ -203,6 +206,72 @@ class OpenRouterLLM(LLMInterface):
         }
         return pricing_map.get(self.model, {'input': 1.0, 'output': 1.0})
 
+class OllamaLLM(LLMInterface):
+    """
+    Ollama API interface for local LLM models (e.g., qwen2.5-tony).
+    """
+    def __init__(
+        self,
+        model: str = "qwen2.5-tony",
+        api_url: str = "http://localhost:11434/api/chat",
+        temperature: float = 0.7,
+        max_tokens: int = 4096,
+        api_key: str = None  # Not used, for compatibility
+    ):
+        self.model = model
+        self.api_url = api_url
+        self.temperature = temperature
+        self.max_tokens = max_tokens
+
+    def query(self, prompt: str) -> str:
+        result = self.query_with_usage(prompt)
+        return result['response']
+
+    def query_with_usage(self, prompt: str) -> Dict[str, Any]:
+        try:
+            payload = {
+                "model": self.model,
+                "messages": [
+                    {"role": "system", "content": "You are an expert in causal inference and graph theory. Please provide ONLY the 3D structure specification in the exact format requested, without any additional explanations, greetings, or text."},
+                    {"role": "user", "content": prompt}
+                ],
+                "options": {
+                    "temperature": self.temperature,
+                    "num_predict": self.max_tokens
+                },
+                "stream": False
+            }
+            headers = {"Content-Type": "application/json"}
+            response = requests.post(self.api_url, headers=headers, data=json.dumps(payload))
+            response.raise_for_status()
+            result = response.json()
+            # Ollama returns response in 'message' or 'messages' field
+            if 'message' in result and 'content' in result['message']:
+                text = result['message']['content']
+            elif 'messages' in result and isinstance(result['messages'], list) and len(result['messages']) > 0:
+                text = result['messages'][-1].get('content', str(result))
+            else:
+                text = str(result)
+            # Ollama API may not return token usage, so set to 0
+            usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+            return {
+                "response": text,
+                "usage": usage,
+                "cost": 0.0
+            }
+        except Exception as e:
+            return {
+                "response": f"Error querying Ollama: {str(e)}",
+                "usage": {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0},
+                "cost": 0.0
+            }
+
+    def get_name(self) -> str:
+        return f"Ollama({self.model})"
+
+    def get_model_pricing(self) -> Dict[str, float]:
+        # Local model, cost is 0
+        return {"input": 0.0, "output": 0.0}
 
 class OpenAILLM(LLMInterface):
     """
@@ -339,6 +408,7 @@ class OpenAILLM(LLMInterface):
             'gpt-5': {'input': 1.25, 'output': 10.0}
         }
         return pricing_map.get(self.model, {'input': 10.0, 'output': 30.0})
+
 
 
 class AnthropicLLM(LLMInterface):

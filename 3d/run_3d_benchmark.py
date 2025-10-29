@@ -17,7 +17,7 @@ import traceback
 # Add parent directory to path if needed
 sys.path.append(str(Path(__file__).parent))
 
-from modules.llm_interface import LLMInterface, OpenRouterLLM, OpenAILLM, AnthropicLLM
+from modules.llm_interface import LLMInterface, OpenRouterLLM, OpenAILLM, AnthropicLLM, OllamaLLM
 
 
 class Structure3D:
@@ -106,6 +106,7 @@ class Structure3D:
         import hashlib
         
         # Normalize structure before hashing
+                
         normalized = self.normalize()
         
         if not normalized.layers:
@@ -350,6 +351,7 @@ class Benchmark3D:
         # Also validate physical support (blocks must have support from below)
         for z in range(1, len(structure.layers)):
             current = structure.layers[z]
+
             below = structure.layers[z-1]
             # Every block in current layer must have at least one block below it
             for r in range(current.shape[0]):
@@ -995,42 +997,54 @@ class Benchmark3D:
         return final_results
 
 
-def setup_llm(llm_type: str, **kwargs) -> LLMInterface:
+def setup_llm(llm_type: str, model=None, api_key=None, base_url=None, temperature=0.7, max_tokens=None, **kwargs) -> LLMInterface:
     """Set up LLM interface based on type."""
     if llm_type == "openai":
         api_key = kwargs.get('api_key') or os.environ.get('OPENAI_API_KEY')
         if not api_key:
             raise ValueError("OpenAI API key required")
-        
         return OpenAILLM(
             model=kwargs.get('model', 'gpt-4'),
             api_key=api_key,
             temperature=kwargs.get('temperature', 0.7),
-            base_url = kwargs.get('base_url')
+            base_url=kwargs.get('base_url')
         )
+    elif llm_type == "ollama":
+        
+                    return OllamaLLM(
+                        model=kwargs.get('model', 'qwen2.5-tony'),
+                        api_url=kwargs.get('base_url', 'http://localhost:11434/api/chat'),
+                        temperature=kwargs.get('temperature', 0.7),
+                        max_tokens=kwargs.get('max_tokens', 4096),
+                    )
     
     elif llm_type == "anthropic":
         api_key = kwargs.get('api_key') or os.environ.get('ANTHROPIC_API_KEY')
         if not api_key:
             raise ValueError("Anthropic API key required")
-        
         return AnthropicLLM(
             model=kwargs.get('model', 'claude-3-opus-20240229'),
             api_key=api_key,
             temperature=kwargs.get('temperature', 0.7)
         )
-    
     elif llm_type == "openrouter":
         api_key = kwargs.get('api_key') or os.environ.get('OPENROUTER_API_KEY')
         if not api_key:
             raise ValueError("OpenRouter API key required")
-        
         return OpenRouterLLM(
             model=kwargs.get('model', 'anthropic/claude-3.5-sonnet'),
             api_key=api_key,
             temperature=kwargs.get('temperature', 0.7)
         )
-    
+    elif llm_type == "ollama":
+        # Ollama 本地 API 不需要 api_key
+        return OllamaLLM(
+            model=kwargs.get('model', 'qwen2.5-tony'),
+            api_url=kwargs.get('base_url', 'http://localhost:11434/api/chat'),
+            temperature=kwargs.get('temperature', 0.7),
+            max_tokens=kwargs.get('max_tokens', 4096),
+            api_key=None
+        )
     else:
         raise ValueError(f"Unknown LLM type: {llm_type}")
 
@@ -1075,40 +1089,24 @@ def main():
     llm_type = config.get('llm', {}).get('type', 'openrouter')
     
     model = config.get('llm', {}).get('models', {}).get(llm_type)
-    if not model:
-        default_models = {
-            'openrouter': 'openai/gpt-3.5-turbo',
-            'openai': 'gpt-4',
-            'anthropic': 'claude-3-opus-20240229'
-        }
-        model = default_models.get(llm_type)
-    
     api_key = config.get('llm', {}).get('api_keys', {}).get(llm_type)
-    if not api_key:
-        env_vars = {
-            'openai': 'OPENAI_API_KEY',
-            'anthropic': 'ANTHROPIC_API_KEY',
-            'openrouter': 'OPENROUTER_API_KEY'
-        }
-        if llm_type in env_vars:
-            api_key = os.environ.get(env_vars[llm_type])
-    
-    temperature = config.get('llm', {}).get('temperature', 0.7)
     base_url = config.get('llm', {}).get('base_urls', {}).get(llm_type)
+    temperature = config.get('llm', {}).get('temperature', 0.7)
+    max_tokens = config.get('llm', {}).get('max_tokens', None)
     checkpoint_dir = args.checkpoint_dir or config.get('benchmark', {}).get('checkpoint_dir', 'checkpoints')
     verbose = args.verbose and config.get('benchmark', {}).get('verbose', True)
     run_id = config.get('benchmark', {}).get('run_id', None)
-    
+
     # Generate output filename if not specified
     if args.output is None:
         dataset_name = Path(args.dataset).stem
-        model_name = Path(model).stem if model else llm_type
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        args.output = f"results/{dataset_name}_{model_name}_{timestamp}.json"
-    
+        model_name = model if model else llm_type
+        output_pattern = config.get('benchmark', {}).get('output_pattern', 'results/{dataset_name}_{model}.json')
+        args.output = output_pattern.format(dataset_name=dataset_name, model=model_name)
+
     # Initialize benchmark
     benchmark = Benchmark3D(args.dataset)
-    
+
     # Print configuration
     print("\n" + "=" * 60)
     print("ENHANCED 3D STRUCTURE DISCOVERY BENCHMARK")
@@ -1118,28 +1116,27 @@ def main():
     print(f"Model: {model}")
     print(f"Temperature: {temperature}")
     print(f"Samples: {args.n_samples}")
-    
     if args.n_queries is not None:
-        print(f"Queries per sample: {args.n_queries} (fixed)")
+        print(f"Queries per sample: {args.n_queries}")
     else:
-        print(f"Queries per sample: {args.query_multiplier}x ground truths (adaptive)")
-    
+        print(f"Query multiplier: {args.query_multiplier}")
     print(f"Max retries: {args.max_retries}")
     print(f"Observation type: {args.observation_type}")
     print(f"Seed: {args.seed}")
     print(f"Checkpoint dir: {checkpoint_dir}")
     print(f"Output: {args.output}")
     print("=" * 60)
-    
+
     # Set up LLM
     llm = setup_llm(
         llm_type,
         model=model,
         api_key=api_key,
         base_url=base_url,
-        temperature=temperature
+        temperature=temperature,
+        max_tokens=max_tokens
     )
-    
+
     # Run benchmark
     results = benchmark.run_benchmark(
         llm=llm,
@@ -1153,14 +1150,14 @@ def main():
         run_id=run_id,
         max_retries=args.max_retries
     )
-    
+
     # Save results
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    
+
     with open(args.output, 'w') as f:
         json.dump(results, f, indent=2)
-    
+
     print(f"\nFinal results saved to: {args.output}")
 
 

@@ -1,19 +1,20 @@
 llm:
-  type: openai
+  type: ollama
   models:
+    ollama: qwen2.5-tony
     openrouter: Null
-    openai: gpt-4o-mini
+    openai: Null
     anthropic: Null
   api_keys:
+    ollama: ""
     openrouter: ""
-    openai: "sk-1jlCFDIGEKWqgJVb3hiuOFKz6oNlsjq8WrS9onjrrtn06OP5"
+    openai: ""
     anthropic: ""
   base_urls:
-    openai: "https://yunwu.ai/v1"
+    ollama: "http://localhost:11434/api/chat"
   temperature: 0.7
 
 benchmark:
   checkpoint: "checkpoints"
   verbose: true
   output_pattern: "results/{dataset_name}_{model}.json"
-
