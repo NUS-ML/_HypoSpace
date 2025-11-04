@@ -1,3 +1,5 @@
+import requests
+import json
 import traceback
 import random
 import requests
@@ -5,6 +7,7 @@ from abc import ABC, abstractmethod
 from typing import List, Optional, Dict, Any, Tuple
 import re
 from .models import CausalGraph
+import ollama
 
 
 def _extract_text(resp) -> str:
@@ -203,63 +206,169 @@ class OpenRouterLLM(LLMInterface):
         }
         return pricing_map.get(self.model, {'input': 1.0, 'output': 1.0})
 
+class OllamaLLM(LLMInterface):
+    """
+    Ollama API interface for local LLM models (e.g., qwen2.5-tony).
+    """
+    def __init__(
+        self,
+        model: str = "qwen2.5-tony-boolbean",
+        api_url: str = "http://localhost:11434/api/chat",
+        temperature: float = 0.7,
+        max_tokens: int = 4096,
+        api_key: str = None  # Not used, for compatibility
+    ):
+        self.model = model
+        self.api_url = api_url
+        self.temperature = temperature
+        self.max_tokens = max_tokens
+
+    def query(self, prompt: str) -> str:
+        result = self.query_with_usage(prompt)
+        return result['response']
+
+    def query_with_usage(self, prompt: str) -> Dict[str, Any]:
+        try:
+            payload = {
+                "model": self.model,
+                "messages": [
+                    {"role": "system", "content": "You are an expert in causal inference and graph theory. Please provide ONLY the 3D structure specification in the exact format requested, without any additional explanations, greetings, or text."},
+                    {"role": "user", "content": prompt}
+                ],
+                "options": {
+                    "temperature": self.temperature,
+                    "num_predict": self.max_tokens
+                },
+                "stream": False
+            }
+            headers = {"Content-Type": "application/json"}
+            response = requests.post(self.api_url, headers=headers, data=json.dumps(payload))
+            response.raise_for_status()
+            result = response.json()
+            # Ollama returns response in 'message' or 'messages' field
+            if 'message' in result and 'content' in result['message']:
+                text = result['message']['content']
+            elif 'messages' in result and isinstance(result['messages'], list) and len(result['messages']) > 0:
+                text = result['messages'][-1].get('content', str(result))
+            else:
+                text = str(result)
+            # Ollama API may not return token usage, so set to 0
+            usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+            return {
+                "response": text,
+                "usage": usage,
+                "cost": 0.0
+            }
+        except Exception as e:
+            return {
+                "response": f"Error querying Ollama: {str(e)}",
+                "usage": {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0},
+                "cost": 0.0
+            }
+
+    def get_name(self) -> str:
+        return f"Ollama({self.model})"
+
+    def get_model_pricing(self) -> Dict[str, float]:
+        # Local model, cost is 0
+        return {"input": 0.0, "output": 0.0}
 
 class OpenAILLM(LLMInterface):
     """
     OpenAI API interface for GPT models.
-    
+
     Requires openai package and API key.
     """
-    
+
+    # def __init__(
+    #     self,
+    #     model: str = "gpt-4",
+    #     api_key: Optional[str] = None,
+    #     temperature: float = 0.7,
+    #     max_tokens: int = 40960
+    # ):
+    #     """
+    #     Initialize OpenAI LLM interface.
+    #
+    #     Args:
+    #         model: OpenAI model to use
+    #         api_key: OpenAI API key (uses environment variable if not provided)
+    #         temperature: Sampling temperature
+    #         max_tokens: Maximum tokens in response
+    #     """
+    #     try:
+    #         import openai
+    #     except ImportError:
+    #         raise ImportError("Please install openai package: pip install openai")
+    #
+    #     self.model = model
+    #     self.temperature = temperature
+    #     self.max_tokens = max_tokens
+    #
+    #     if not api_key:
+    #         import os
+    #         api_key = os.getenv("OPENAI_API_KEY")
+    #         if not api_key:
+    #             raise ValueError("OpenAI API key must be provided or set as OPENAI_API_KEY environment variable")
+    #
+    #     self.client = openai.OpenAI(api_key=api_key)
+
     def __init__(
-        self, 
-        model: str = "gpt-4",
-        api_key: Optional[str] = None,
-        temperature: float = 0.7,
-        max_tokens: int = 40960
+            self,
+            model: str = "gpt-4",
+            api_key: Optional[str] = None,
+            temperature: float = 0.7,
+            max_tokens: int = 40960,
+            base_url: str = "https://api.deepseek.com/v1"  # 添加 base_url 参数
     ):
         """
         Initialize OpenAI LLM interface.
-        
+
         Args:
             model: OpenAI model to use
             api_key: OpenAI API key (uses environment variable if not provided)
             temperature: Sampling temperature
             max_tokens: Maximum tokens in response
+            base_url: Custom base URL for OpenAI-compatible APIs
         """
         try:
             import openai
         except ImportError:
             raise ImportError("Please install openai package: pip install openai")
-        
+
         self.model = model
         self.temperature = temperature
         self.max_tokens = max_tokens
-        
+
         if not api_key:
             import os
             api_key = os.getenv("OPENAI_API_KEY")
             if not api_key:
                 raise ValueError("OpenAI API key must be provided or set as OPENAI_API_KEY environment variable")
-        
-        self.client = openai.OpenAI(api_key=api_key)
-    
+
+        # 支持自定义 base_url
+        client_kwargs = {"api_key": api_key}
+        if base_url:
+            client_kwargs["base_url"] = base_url
+
+        self.client = openai.OpenAI(**client_kwargs)
+
     def query(self, prompt: str) -> str:
         """Query OpenAI API."""
         result = self.query_with_usage(prompt)
         return result['response']
-    
+
     def query_with_usage(self, prompt: str) -> Dict[str, Any]:
         try:
             # print(self.max_tokens)
-            resp = self.client.responses.create(
-                model=self.model,
-                input=[
-                    {"role": "system", "content": "You are an expert in causal inference and graph theory."},
-                    {"role": "user", "content": prompt},
+            resp = self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system",
+                     "content": "You are an expert in causal inference and graph theory. Please provide ONLY the 3D structure specification in the exact format requested, without any additional explanations, greetings, or text."},
+                    {"role": "user", "content": prompt}
                 ],
-                reasoning={"effort": "medium"},
-                max_output_tokens=self.max_tokens
+                # stream=False
             )
 
             text = _extract_text(resp)
@@ -285,11 +394,11 @@ class OpenAILLM(LLMInterface):
                 "usage": {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0},
                 "cost": 0.0,
             }
-    
+
     def get_name(self) -> str:
         """Get the model name."""
         return f"OpenAI({self.model})"
-    
+
     def get_model_pricing(self) -> Dict[str, float]:
         """Get pricing per 1M tokens for OpenAI models."""
         # Pricing in dollars per 1M tokens
@@ -299,6 +408,7 @@ class OpenAILLM(LLMInterface):
             'gpt-5': {'input': 1.25, 'output': 10.0}
         }
         return pricing_map.get(self.model, {'input': 10.0, 'output': 30.0})
+
 
 
 class AnthropicLLM(LLMInterface):

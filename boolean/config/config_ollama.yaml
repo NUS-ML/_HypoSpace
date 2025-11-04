@@ -1,0 +1,20 @@
+llm:
+  type: ollama
+  models:
+    ollama: qwen2.5-tony-boolbean
+    openrouter: Null
+    openai: Null
+    anthropic: Null
+  api_keys:
+    ollama: ""
+    openrouter: ""
+    openai: ""
+    anthropic: ""
+  base_urls:
+    ollama: "http://localhost:11434/api/chat"
+  temperature: 0.7
+
+benchmark:
+  checkpoint: "checkpoints"
+  verbose: true
+  output_pattern: "results/{dataset_name}_{model}.json"

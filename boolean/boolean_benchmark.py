@@ -19,7 +19,7 @@ import traceback
 # Add parent directory to path if needed
 sys.path.append(str(Path(__file__).parent))
 
-from modules.llm_interface import LLMInterface, OpenRouterLLM, OpenAILLM, AnthropicLLM
+from modules.llm_interface import LLMInterface, OpenRouterLLM, OpenAILLM, AnthropicLLM, OllamaLLM
 from boolean_dataset import BooleanExpression, BooleanObservation
 
 
@@ -492,7 +492,7 @@ class BooleanBenchmarkRefined:
                     total_cost += result.get('cost', 0.0)
                 else:
                     response = llm.query(prompt)
-                
+                print(response)
                 # Check if response is an error
                 if response.startswith("Error querying"):
                     query_error = {
@@ -894,7 +894,15 @@ def setup_llm(llm_type: str, **kwargs) -> LLMInterface:
             api_key=api_key,
             temperature=kwargs.get('temperature', 0.7)
         )
-    
+    elif llm_type == "ollama":
+        
+        return OllamaLLM(
+            model=kwargs.get('model', 'qwen2.5-tony-boolbean'),
+            api_url=kwargs.get('base_url', 'http://localhost:11434/api/chat'),
+            temperature=kwargs.get('temperature', 0.7),
+            max_tokens=kwargs.get('max_tokens', 4096),
+        )
+
     elif llm_type == "anthropic":
         api_key = kwargs.get('api_key') or os.environ.get('ANTHROPIC_API_KEY')
         if not api_key:
