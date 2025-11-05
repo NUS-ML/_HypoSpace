@@ -1,0 +1,21 @@
+# FROM /Users/dorian/Documents/Programme/NUS311/model_test/lora/qwencausal
+FROM /Users/dorian/Documents/Programme/NUS311/model_test/lora/qwen
+
+# 推理参数（适合精确结构推理）
+PARAMETER temperature 0.2
+PARAMETER top_p 0.8
+PARAMETER top_k 50
+PARAMETER repeat_penalty 1.05
+PARAMETER num_ctx 4096
+PARAMETER num_predict 512
+
+# 对齐 Qwen 格式的多轮对话模版
+TEMPLATE """<|im_start|>system
+{{ .System }}<|im_end|>
+<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+"""
+
+# 设定系统指令
+# SYSTEM "You are an expert in causal inference and graph theory."

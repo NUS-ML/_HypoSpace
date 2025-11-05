@@ -1,0 +1,14 @@
+[project]
+name = "hypollm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mlx-lm>=0.28.3",
+    "modelscope>=1.31.0",
+    "numpy>=2.3.4",
+    "swanlab>=0.6.13",
+    "torch>=2.9.0",
+    "transformers>=4.57.1",
+]

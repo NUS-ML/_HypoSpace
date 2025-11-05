@@ -1,0 +1,4 @@
+swanlab
+mlx>=0.8.0
+transformers
+numpy

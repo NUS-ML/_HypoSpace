@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional
 from itertools import combinations
 import os
 
-from .build_lora_jsonl import build_examples_from_file
+from build_lora_jsonl import build_examples_from_file
 
 
 def _dedup_key(user_content: str, assistant_content: str) -> str:
