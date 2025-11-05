@@ -1,0 +1,17 @@
+llm:
+  type: openai
+  models:
+    openrouter: Null
+    openai: "qwen"
+    anthropic: Null
+  api_keys:
+    openrouter: ""
+    openai: "sk-1jlCFDIGEKWqgJVb3hiuOFKz6oNlsjq8WrS9onjrrtn06OP5"
+    anthropic: ""
+  temperature: 0.7
+
+benchmark:
+  checkpoint: "checkpoints"
+  verbose: true
+  output_pattern: "results/{dataset_name}_{model}.json"
+

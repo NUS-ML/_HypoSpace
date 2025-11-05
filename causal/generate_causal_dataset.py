@@ -8,7 +8,7 @@ import networkx as nx
 from itertools import combinations
 from datetime import datetime
 import random
-from causal.modules.models import CausalGraph
+from modules.models import CausalGraph
 
 def _combo_has_unique_perturbed_nodes(combo) -> bool:
     """True iff no two observations perturb the same node."""

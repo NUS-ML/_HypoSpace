@@ -1,0 +1,1180 @@
+{
+  "run_id": "20251029_012157",
+  "llm_name": "OpenAI(minimind)",
+  "n_samples": 30,
+  "n_queries_per_sample": null,
+  "query_multiplier": 1.0,
+  "query_mode": "adaptive_1.0x",
+  "seed": 33550336,
+  "timestamp": "2025-10-29T01:23:23.795479",
+  "max_edges_constraint": 3,
+  "statistics": {
+    "parse_success_rate": {
+      "mean": 0.18333333333333332,
+      "std": 0.3015392610024869,
+      "var": 0.09092592592592591,
+      "min": 0.0,
+      "max": 1.0,
+      "p_value": 0.0027438915510745792
+    },
+    "valid_rate": {
+      "mean": 0.019444444444444445,
+      "std": 0.07959193767719114,
+      "var": 0.006334876543209879,
+      "min": 0.0,
+      "max": 0.4166666666666667,
+      "p_value": 0.1986133152404047
+    },
+    "novelty_rate": {
+      "mean": 0.15277777777777776,
+      "std": 0.2644730376698558,
+      "var": 0.06994598765432097,
+      "min": 0.0,
+      "max": 1.0,
+      "p_value": 0.00416255266755376
+    },
+    "recovery_rate": {
+      "mean": 0.005555555555555555,
+      "std": 0.02078698548207745,
+      "var": 0.0004320987654320986,
+      "min": 0.0,
+      "max": 0.08333333333333333,
+      "p_value": 0.1607882084258767
+    }
+  },
+  "token_usage": {
+    "prompt_tokens": 104356,
+    "completion_tokens": 60660,
+    "total_tokens": 165016,
+    "avg_tokens_per_sample": 5500.533333333334,
+    "avg_tokens_per_query": 5500.533333333334
+  },
+  "cost": {
+    "total_cost": 2.8633599999999992,
+    "avg_cost_per_sample": 0.09544533333333331,
+    "avg_cost_per_query": 0.09544533333333331
+  },
+  "error_summary": {
+    "total_errors": 0,
+    "error_types": {},
+    "error_rate": 0.0
+  },
+  "per_sample_results": [
+    {
+      "observation_set_id": "n3_006",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1299,
+        "completion_tokens": 1004,
+        "total_tokens": 2303
+      },
+      "cost": 0.04311,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_017",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1299,
+        "completion_tokens": 882,
+        "total_tokens": 2181
+      },
+      "cost": 0.03945,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_016",
+      "n_observations": 2,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 2484,
+        "completion_tokens": 1964,
+        "total_tokens": 4448
+      },
+      "cost": 0.08376,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_004",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1299,
+        "completion_tokens": 453,
+        "total_tokens": 1752
+      },
+      "cost": 0.02658,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_022",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 4968,
+        "completion_tokens": 2157,
+        "total_tokens": 7125
+      },
+      "cost": 0.11438999999999999,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_010",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 2598,
+        "completion_tokens": 1449,
+        "total_tokens": 4047
+      },
+      "cost": 0.06945000000000001,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_003",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 0.25,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 4176,
+        "completion_tokens": 3034,
+        "total_tokens": 7210
+      },
+      "cost": 0.13278,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_029",
+      "n_observations": 2,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 0.3333333333333333,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.3333333333333333,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 2898,
+        "completion_tokens": 1585,
+        "total_tokens": 4483
+      },
+      "cost": 0.07653,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_014",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1299,
+        "completion_tokens": 727,
+        "total_tokens": 2026
+      },
+      "cost": 0.0348,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_013",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 2598,
+        "completion_tokens": 1846,
+        "total_tokens": 4444
+      },
+      "cost": 0.08135999999999999,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_005",
+      "n_observations": 1,
+      "n_ground_truths": 12,
+      "n_queries": 12,
+      "n_valid": 5,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 5,
+      "parse_success_rate": 0.4166666666666667,
+      "valid_rate": 0.4166666666666667,
+      "novelty_rate": 0.08333333333333333,
+      "recovery_rate": 0.08333333333333333,
+      "token_usage": {
+        "prompt_tokens": 13881,
+        "completion_tokens": 6723,
+        "total_tokens": 20604
+      },
+      "cost": 0.34049999999999997,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ]
+    },
+    {
+      "observation_set_id": "n2_023",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1242,
+        "completion_tokens": 708,
+        "total_tokens": 1950
+      },
+      "cost": 0.03366,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_008",
+      "n_observations": 2,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 0.3333333333333333,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.3333333333333333,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 3762,
+        "completion_tokens": 1771,
+        "total_tokens": 5533
+      },
+      "cost": 0.09075,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_011",
+      "n_observations": 1,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 0.25,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 4740,
+        "completion_tokens": 2454,
+        "total_tokens": 7194
+      },
+      "cost": 0.12102,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_004",
+      "n_observations": 1,
+      "n_ground_truths": 5,
+      "n_queries": 5,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 5925,
+        "completion_tokens": 3848,
+        "total_tokens": 9773
+      },
+      "cost": 0.17468999999999998,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_003",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1299,
+        "completion_tokens": 1150,
+        "total_tokens": 2449
+      },
+      "cost": 0.04749,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_014",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1242,
+        "completion_tokens": 1109,
+        "total_tokens": 2351
+      },
+      "cost": 0.045689999999999995,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_010",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 828,
+        "completion_tokens": 415,
+        "total_tokens": 1243
+      },
+      "cost": 0.02073,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_007",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 0.25,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 4968,
+        "completion_tokens": 4542,
+        "total_tokens": 9510
+      },
+      "cost": 0.18594,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_003",
+      "n_observations": 1,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 0.25,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 4758,
+        "completion_tokens": 2985,
+        "total_tokens": 7743
+      },
+      "cost": 0.13713,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_008",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 2183,
+        "completion_tokens": 896,
+        "total_tokens": 3079
+      },
+      "cost": 0.04871,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_027",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1242,
+        "completion_tokens": 757,
+        "total_tokens": 1999
+      },
+      "cost": 0.03513,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_007",
+      "n_observations": 1,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 0.25,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 4381,
+        "completion_tokens": 2477,
+        "total_tokens": 6858
+      },
+      "cost": 0.11812,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_009",
+      "n_observations": 1,
+      "n_ground_truths": 12,
+      "n_queries": 12,
+      "n_valid": 2,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 0.16666666666666666,
+      "valid_rate": 0.16666666666666666,
+      "novelty_rate": 0.08333333333333333,
+      "recovery_rate": 0.08333333333333333,
+      "token_usage": {
+        "prompt_tokens": 14026,
+        "completion_tokens": 7513,
+        "total_tokens": 21539
+      },
+      "cost": 0.36565,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ]
+    },
+    {
+      "observation_set_id": "n2_021",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 4968,
+        "completion_tokens": 2569,
+        "total_tokens": 7537
+      },
+      "cost": 0.12675,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_025",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 4968,
+        "completion_tokens": 2662,
+        "total_tokens": 7630
+      },
+      "cost": 0.12954000000000002,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_009",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1242,
+        "completion_tokens": 638,
+        "total_tokens": 1880
+      },
+      "cost": 0.03156,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_011",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1299,
+        "completion_tokens": 1360,
+        "total_tokens": 2659
+      },
+      "cost": 0.05379,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_026",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1242,
+        "completion_tokens": 253,
+        "total_tokens": 1495
+      },
+      "cost": 0.02001,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_002",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1242,
+        "completion_tokens": 729,
+        "total_tokens": 1971
+      },
+      "cost": 0.03429,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    }
+  ]
+}

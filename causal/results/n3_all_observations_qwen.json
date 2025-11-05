@@ -1,0 +1,2323 @@
+{
+  "run_id": "20251030_110411",
+  "llm_name": "OpenAI(qwen)",
+  "n_samples": 30,
+  "n_queries_per_sample": null,
+  "query_multiplier": 1.0,
+  "query_mode": "adaptive_1.0x",
+  "seed": 33550336,
+  "timestamp": "2025-10-30T11:07:42.817367",
+  "max_edges_constraint": 3,
+  "statistics": {
+    "parse_success_rate": {
+      "mean": 0.8555555555555555,
+      "std": 0.272958188811961,
+      "var": 0.07450617283950615,
+      "min": 0.0,
+      "max": 1.0,
+      "p_value": 1.5409923724822024e-16
+    },
+    "valid_rate": {
+      "mean": 0.10611111111111111,
+      "std": 0.25467784055377846,
+      "var": 0.0648608024691358,
+      "min": 0.0,
+      "max": 1.0,
+      "p_value": 0.03265392461607053
+    },
+    "novelty_rate": {
+      "mean": 0.6827777777777778,
+      "std": 0.32777259882914234,
+      "var": 0.10743487654320989,
+      "min": 0.0,
+      "max": 1.0,
+      "p_value": 4.575163828783479e-12
+    },
+    "recovery_rate": {
+      "mean": 0.03166666666666666,
+      "std": 0.07519727142409907,
+      "var": 0.005654629629629627,
+      "min": 0.0,
+      "max": 0.25,
+      "p_value": 0.030970319728752572
+    }
+  },
+  "token_usage": {
+    "prompt_tokens": 40985,
+    "completion_tokens": 16238,
+    "total_tokens": 57223,
+    "avg_tokens_per_sample": 1907.4333333333334,
+    "avg_tokens_per_query": 1907.4333333333334
+  },
+  "cost": {
+    "total_cost": 0.8969900000000003,
+    "avg_cost_per_sample": 0.029899666666666675,
+    "avg_cost_per_query": 0.029899666666666675
+  },
+  "error_summary": {
+    "total_errors": 0,
+    "error_types": {},
+    "error_rate": 0.0
+  },
+  "per_sample_results": [
+    {
+      "observation_set_id": "n3_006",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 303,
+        "completion_tokens": 10,
+        "total_tokens": 313
+      },
+      "cost": 0.00333,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_017",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 303,
+        "completion_tokens": 221,
+        "total_tokens": 524
+      },
+      "cost": 0.00966,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_016",
+      "n_observations": 2,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 0.5,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1459,
+        "completion_tokens": 990,
+        "total_tokens": 2449
+      },
+      "cost": 0.04429,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_004",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 303,
+        "completion_tokens": 463,
+        "total_tokens": 766
+      },
+      "cost": 0.01692,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_022",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 3,
+      "n_recovered_gts": 0,
+      "parse_success_count": 3,
+      "parse_success_rate": 0.75,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.75,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 2045,
+        "completion_tokens": 1280,
+        "total_tokens": 3325
+      },
+      "cost": 0.05885,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_010",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 2,
+      "n_recovered_gts": 0,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1524,
+        "completion_tokens": 481,
+        "total_tokens": 2005
+      },
+      "cost": 0.029670000000000002,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_003",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 3,
+      "n_recovered_gts": 0,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.75,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 2369,
+        "completion_tokens": 2121,
+        "total_tokens": 4490
+      },
+      "cost": 0.08732,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_029",
+      "n_observations": 2,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 2,
+      "parse_success_rate": 0.6666666666666666,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.3333333333333333,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1443,
+        "completion_tokens": 730,
+        "total_tokens": 2173
+      },
+      "cost": 0.03633,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_014",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 269,
+        "total_tokens": 1178
+      },
+      "cost": 0.017159999999999998,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_013",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 0.5,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1842,
+        "completion_tokens": 1042,
+        "total_tokens": 2884
+      },
+      "cost": 0.049679999999999995,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_005",
+      "n_observations": 1,
+      "n_ground_truths": 12,
+      "n_queries": 12,
+      "n_valid": 4,
+      "n_unique_valid": 1,
+      "n_unique_all": 2,
+      "n_recovered_gts": 1,
+      "parse_success_count": 12,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.3333333333333333,
+      "novelty_rate": 0.16666666666666666,
+      "recovery_rate": 0.08333333333333333,
+      "token_usage": {
+        "prompt_tokens": 4433,
+        "completion_tokens": 496,
+        "total_tokens": 4929
+      },
+      "cost": 0.05921,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ]
+    },
+    {
+      "observation_set_id": "n2_023",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 861,
+        "completion_tokens": 96,
+        "total_tokens": 957
+      },
+      "cost": 0.01149,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_008",
+      "n_observations": 2,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 2,
+      "n_recovered_gts": 0,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.6666666666666666,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 877,
+        "completion_tokens": 26,
+        "total_tokens": 903
+      },
+      "cost": 0.00955,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_011",
+      "n_observations": 1,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 3,
+      "n_recovered_gts": 0,
+      "parse_success_count": 3,
+      "parse_success_rate": 0.75,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.75,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1950,
+        "completion_tokens": 386,
+        "total_tokens": 2336
+      },
+      "cost": 0.031080000000000003,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_004",
+      "n_observations": 1,
+      "n_ground_truths": 5,
+      "n_queries": 5,
+      "n_valid": 3,
+      "n_unique_valid": 1,
+      "n_unique_all": 2,
+      "n_recovered_gts": 1,
+      "parse_success_count": 5,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.6,
+      "novelty_rate": 0.4,
+      "recovery_rate": 0.2,
+      "token_usage": {
+        "prompt_tokens": 1691,
+        "completion_tokens": 565,
+        "total_tokens": 2256
+      },
+      "cost": 0.03386,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "observation_set_id": "n3_003",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 909,
+        "completion_tokens": 42,
+        "total_tokens": 951
+      },
+      "cost": 0.01035,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_014",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 574,
+        "completion_tokens": 341,
+        "total_tokens": 915
+      },
+      "cost": 0.015969999999999998,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_010",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 10,
+        "total_tokens": 297
+      },
+      "cost": 0.00317,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_007",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 2,
+      "n_recovered_gts": 0,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 2676,
+        "completion_tokens": 1219,
+        "total_tokens": 3895
+      },
+      "cost": 0.06333,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_003",
+      "n_observations": 1,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 2,
+      "n_recovered_gts": 0,
+      "parse_success_count": 3,
+      "parse_success_rate": 0.75,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1950,
+        "completion_tokens": 1111,
+        "total_tokens": 3061
+      },
+      "cost": 0.052829999999999995,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_008",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 2,
+      "n_recovered_gts": 0,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 913,
+        "completion_tokens": 481,
+        "total_tokens": 1394
+      },
+      "cost": 0.02356,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_027",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 163,
+        "total_tokens": 450
+      },
+      "cost": 0.00776,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_007",
+      "n_observations": 1,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 2,
+      "n_recovered_gts": 0,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 1686,
+        "completion_tokens": 442,
+        "total_tokens": 2128
+      },
+      "cost": 0.03012,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n1_009",
+      "n_observations": 1,
+      "n_ground_truths": 12,
+      "n_queries": 12,
+      "n_valid": 12,
+      "n_unique_valid": 2,
+      "n_unique_all": 2,
+      "n_recovered_gts": 2,
+      "parse_success_count": 12,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.16666666666666666,
+      "recovery_rate": 0.16666666666666666,
+      "token_usage": {
+        "prompt_tokens": 3580,
+        "completion_tokens": 640,
+        "total_tokens": 4220
+      },
+      "cost": 0.055,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "observation_set_id": "n2_021",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 2,
+      "n_unique_valid": 1,
+      "n_unique_all": 2,
+      "n_recovered_gts": 1,
+      "parse_success_count": 3,
+      "parse_success_rate": 0.75,
+      "valid_rate": 0.5,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.25,
+      "token_usage": {
+        "prompt_tokens": 2020,
+        "completion_tokens": 1176,
+        "total_tokens": 3196
+      },
+      "cost": 0.05548,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ]
+    },
+    {
+      "observation_set_id": "n2_025",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 3,
+      "n_unique_valid": 1,
+      "n_unique_all": 2,
+      "n_recovered_gts": 1,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.75,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.25,
+      "token_usage": {
+        "prompt_tokens": 1766,
+        "completion_tokens": 99,
+        "total_tokens": 1865
+      },
+      "cost": 0.020630000000000003,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "observation_set_id": "n2_009",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 0,
+      "parse_success_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 861,
+        "completion_tokens": 1259,
+        "total_tokens": 2120
+      },
+      "cost": 0.046380000000000005,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n3_011",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 303,
+        "completion_tokens": 10,
+        "total_tokens": 313
+      },
+      "cost": 0.00333,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_026",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 574,
+        "completion_tokens": 24,
+        "total_tokens": 598
+      },
+      "cost": 0.0064600000000000005,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "observation_set_id": "n2_002",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 45,
+        "total_tokens": 332
+      },
+      "cost": 0.00422,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    }
+  ]
+}

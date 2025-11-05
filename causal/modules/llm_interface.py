@@ -214,11 +214,11 @@ class OpenAILLM(LLMInterface):
     
     def __init__(
         self, 
-        model: str = "gpt-5",
+        model: str = "qwen",
         api_key: Optional[str] = None,
         temperature: float = 0.7,
         max_tokens: int = 32768,
-        base_url: str = "https://yunwu.ai/v1"
+        base_url: str = "http://localhost:11434/v1"
     ):
         """
         Initialize OpenAI LLM interface.
