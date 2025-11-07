@@ -49,6 +49,8 @@ $ mlx_lm.fuse --model <base-model-path>  --adapter-path adapters --save-path <yo
 ```zsh
 $ ollama create <your-model-name> -f <Modelfile path>
 ```
+here we also need to notice the Modelfile. You can change the settings in it, such as model path and hyper-parameters. 
+
 4. run the model in ollama
 ```zsh
 $ ollama run <your-model-name>
