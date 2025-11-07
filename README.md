@@ -29,13 +29,13 @@ $ uv run python generate_3d_dataset_complete.py \
   --seed 33550336 \
   --output "datasets/3d_complete.json"
 ```
-3. Run the script to change to loRa
+3. Run the script to change to llm format
 ```zsh
 $ uv run tools/auto_build_lora_dataset.py --inputs ./datasets/3d_complete.json --output ./datasets/lora_3d.jsonl --seeds 42,43 --mode all-gts --include-priors 0 --limit-per-set 100 --dedup 
 ```
 4. An other part of dataset distill from GPT-5. Didn't give out here.
 
-### Do LoRa 
+### Run LoRa 
 1. move train.jsonl into lora/data, and do lora
 ```zsh
 $ cd lora
@@ -55,3 +55,5 @@ here we also need to notice the Modelfile. You can change the settings in it, su
 ```zsh
 $ ollama run <your-model-name>
 ```
+
+### Run benchmark
