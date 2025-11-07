@@ -5,7 +5,7 @@ from abc import ABC, abstractmethod
 from typing import List, Optional, Dict, Any, Tuple
 import re
 from .models import CausalGraph
-
+import time
 
 def _extract_text(resp) -> str:
     # 1) Responses API convenience
@@ -102,7 +102,7 @@ class OpenRouterLLM(LLMInterface):
         api_key: Optional[str] = None,
         temperature: float = 0.7,
         max_tokens: int = 40960,
-        base_url: str = "https://openrouter.ai/api/v1"
+        base_url: str = "https://api.oaipro.com/v1"
     ):
         """
         Initialize OpenRouter LLM interface.
@@ -200,6 +200,7 @@ class OpenRouterLLM(LLMInterface):
             'meta-llama/llama-3.3-70b-instruct': {'input': 0.038, 'output': 0.12},
             'google/gemini-2.5-pro': {'input': 1.25, 'output': 10.0},
             'deepseek/deepseek-r1': {'input': 0.4, 'output': 2},
+            'gpt-4.1-nano': {'input': 0.4, 'output': 2},
         }
         return pricing_map.get(self.model, {'input': 1.0, 'output': 1.0})
 
@@ -213,10 +214,11 @@ class OpenAILLM(LLMInterface):
     
     def __init__(
         self, 
-        model: str = "gpt-4",
+        model: str = "qwen",
         api_key: Optional[str] = None,
         temperature: float = 0.7,
-        max_tokens: int = 40960
+        max_tokens: int = 32768,
+        base_url: str = "http://localhost:11434/v1"
     ):
         """
         Initialize OpenAI LLM interface.
@@ -226,6 +228,7 @@ class OpenAILLM(LLMInterface):
             api_key: OpenAI API key (uses environment variable if not provided)
             temperature: Sampling temperature
             max_tokens: Maximum tokens in response
+            base_url: API base URL
         """
         try:
             import openai
@@ -242,33 +245,41 @@ class OpenAILLM(LLMInterface):
             if not api_key:
                 raise ValueError("OpenAI API key must be provided or set as OPENAI_API_KEY environment variable")
         
-        self.client = openai.OpenAI(api_key=api_key)
+        self.client = openai.OpenAI(api_key=api_key, base_url=base_url)
     
     def query(self, prompt: str) -> str:
         """Query OpenAI API."""
+        time.sleep(random.uniform(0.5, 1.5))  # To avoid rate limits
         result = self.query_with_usage(prompt)
         return result['response']
     
     def query_with_usage(self, prompt: str) -> Dict[str, Any]:
         try:
-            # print(self.max_tokens)
-            resp = self.client.responses.create(
+            resp = self.client.chat.completions.create(
                 model=self.model,
-                input=[
+                messages=[
                     {"role": "system", "content": "You are an expert in causal inference and graph theory."},
                     {"role": "user", "content": prompt},
                 ],
-                reasoning={"effort": "medium"},
-                max_output_tokens=self.max_tokens
+                # reasoning={"effort": "medium"},
+                # text={"verbosity": "medium"}
+                # max_output_tokens=self.max_tokens
             )
 
-            text = _extract_text(resp)
-            in_tok, out_tok, tot_tok = _extract_usage(resp)
+            # Extract response text
+            text = resp.choices[0].message.content
+
+            print('OpenAI response:', text)
+            
+            # Extract usage information
+            usage = resp.usage
+            in_tok = usage.prompt_tokens
+            out_tok = usage.completion_tokens
+            tot_tok = usage.total_tokens
 
             pricing = self.get_model_pricing()
             cost = (in_tok * pricing['input'] + out_tok * pricing['output']) / 1_000_000
 
-            # print(text)
             return {
                 "response": text,
                 "usage": {
