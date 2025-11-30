@@ -212,7 +212,7 @@ class OllamaLLM(LLMInterface):
     """
     def __init__(
         self,
-        model: str = "qwen2.5-tony-boolbean",
+        model: str = "qwen2.5:0.5b",
         api_url: str = "http://localhost:11434/api/chat",
         temperature: float = 0.7,
         max_tokens: int = 4096,

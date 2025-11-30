@@ -105,149 +105,56 @@ class CausalDatasetGenerator:
         seed: Optional[int] = None,
         n_samples: Optional[int] = None
     ) -> List[Dict]:
-        """
-        Generate all possible datasets with exactly n_observations.
-        
-        Args:
-            nodes: List of node names
-            n_observations: Number of observations to include
-            max_edges: Maximum edges in generated DAGs (if None, will be inferred from observations)
-            seed: Random seed for reproducibility
-            n_samples: If specified, sample this many observation combinations before checking compatibility
-            
-        Returns:
-            List of dataset dictionaries, each with a unique observation combination
-        """
         if seed is not None:
             random.seed(seed)
             np.random.seed(seed)
-        
-        # First pass: if max_edges not specified, we need to determine it from data
+
+        # 优化 DAG 生成
         if max_edges is None:
-            # Generate all possible DAGs to find what observations are possible
-            print(f"Determining maximum edges needed for {n_observations} observations...")
-            temp_all_dags = CausalDatasetGenerator.generate_all_dags(nodes, None)
-            
-            # Find the maximum number of edges in any DAG
-            max_edges_found = max(len(dag.edges) for dag in temp_all_dags) if temp_all_dags else 0
-            max_edges = max_edges_found
-            print(f"Using max_edges={max_edges} (maximum found in all possible DAGs)")
-            all_dags = temp_all_dags
-        else:
-            # Generate all possible DAGs with specified limit
-            print(f"Generating all DAGs with {len(nodes)} nodes and max {max_edges} edges...")
-            all_dags = CausalDatasetGenerator.generate_all_dags(nodes, max_edges)
-        
-        print(f"Generated {len(all_dags)} DAGs")
-        
-        # Precompute descendants/effects per DAG (speedup)
-        dag_caches = []  # list of (dag, desc_map, effects_by_node)
+            max_edges = min(len(nodes) * 2, len(nodes) * (len(nodes) - 1) // 2)  # 默认限制最大边数
+        all_dags = CausalDatasetGenerator.generate_all_dags(nodes, max_edges)
+
+        # 优化兼容性检查
+        dag_caches = []
         for dag in all_dags:
             G = dag.to_networkx()
             desc_map = {n: nx.descendants(G, n) for n in G.nodes}
-            effects_by_node = {}
-            for n in dag.nodes:
-                # Build once per (dag, node)
-                effects = {m: (1 if m in desc_map[n] else 0) for m in dag.nodes}
-                effects[n] = 0
-                effects_by_node[n] = PerturbationObservation(n, effects)
+            effects_by_node = {
+                n: PerturbationObservation(n, {m: (1 if m in desc_map[n] else 0) for m in dag.nodes})
+                for n in dag.nodes
+            }
             dag_caches.append((dag, desc_map, effects_by_node))
-        
-        # Generate all possible perturbation observations (dedup)
-        all_possible_observations = set()
-        for _, _, effects_by_node in dag_caches:
-            for n in nodes:
-                all_possible_observations.add(effects_by_node[n])
 
-        # Sort observations for deterministic ordering
-        all_possible_observations = sorted(list(all_possible_observations), 
-                                          key=lambda o: (o.perturbed_node, sorted(o.effects.items())))
-        print(f"Total possible observations: {len(all_possible_observations)}")
+        # 优化组合生成
+        all_possible_observations = {
+            effects_by_node[n] for _, _, effects_by_node in dag_caches for n in nodes
+        }
+        all_possible_observations = sorted(all_possible_observations, key=lambda o: (o.perturbed_node, sorted(o.effects.items())))
 
-        # Only consider combos with unique perturbed nodes
-        total_raw_combos = math.comb(len(all_possible_observations), n_observations)
-
-        # Keep only combos with unique perturbed nodes
         if n_samples is not None:
-            # Sample mode: more efficient sampling without generating all combinations
-            print(f"Sampling up to {n_samples} observation combinations...")
-            
-            # For efficiency, use reservoir sampling to avoid materializing all combinations
-            observation_combinations = []
-            seen_count = 0
-            
-            for combo in combinations(all_possible_observations, n_observations):
-                if _combo_has_unique_perturbed_nodes(combo):
-                    seen_count += 1
-                    if len(observation_combinations) < n_samples:
-                        # Fill reservoir
-                        observation_combinations.append(combo)
-                    else:
-                        # Reservoir sampling: replace with decreasing probability
-                        j = random.randint(0, seen_count - 1)
-                        if j < n_samples:
-                            observation_combinations[j] = combo
-            
-            print(f"  - Found {seen_count} valid combinations")
-            print(f"  - Sampled {len(observation_combinations)} observation combinations")
-            skipped_duplicate_nodes = 0  # Not relevant in sampling mode
+            observation_combinations = random.sample(
+                [combo for combo in combinations(all_possible_observations, n_observations) if _combo_has_unique_perturbed_nodes(combo)],
+                n_samples
+            )
         else:
-            # Original mode: generate all combinations
             observation_combinations = [
                 combo for combo in combinations(all_possible_observations, n_observations)
                 if _combo_has_unique_perturbed_nodes(combo)
             ]
-            
-            skipped_duplicate_nodes = total_raw_combos - len(observation_combinations)
-            print(f"Total observation combinations of size {n_observations}: {len(observation_combinations)}")
-        
+
+        # 生成数据集
         datasets = []
-        dataset_counter = 0
-
         for obs_combo in observation_combinations:
-            compatible_dags = []
-            for dag, _, effects_by_node in dag_caches:
-                # All observations must match exactly what this DAG predicts
-                if all(effects_by_node[o.perturbed_node].effects == o.effects for o in obs_combo):
-                    compatible_dags.append(dag)
-
+            compatible_dags = [
+                dag for dag, _, effects_by_node in dag_caches
+                if all(effects_by_node[o.perturbed_node].effects == o.effects for o in obs_combo)
+            ]
             if compatible_dags:
-                dataset_counter += 1
-                obs_set_id = f"n{n_observations}_{dataset_counter:03d}"
-                dataset = {
-                    "observation_set_id": obs_set_id,
-                    "n_observations": n_observations,
-                    "observations": [
-                        {
-                            "perturbed_node": o.perturbed_node,
-                            "effects": o.effects,
-                            "string": o.to_string(),
-                        } for o in obs_combo
-                    ],
+                datasets.append({
+                    "observations": [o.to_dict() for o in obs_combo],
                     "ground_truth_graphs": [dag.to_dict() for dag in compatible_dags],
-                    "n_compatible_graphs": len(compatible_dags),
-                    "nodes": nodes,
-                    "max_edges": max_edges
-                }
-                datasets.append(dataset)
+                })
 
-        # Print filtering summary
-        if n_samples is not None:
-            # Sampling mode summary
-            if len(datasets) > 0:
-                success_rate = (len(datasets) / len(observation_combinations)) * 100
-                print(f"  - Sampled combinations checked: {len(observation_combinations)}")
-                print(f"  - Datasets produced (with ≥1 compatible DAG): {len(datasets)} ({success_rate:.1f}% success rate)")
-            else:
-                print(f"  - Sampled combinations checked: {len(observation_combinations)}")
-                print(f"  - Datasets produced: 0 (none had compatible DAGs)")
-        else:
-            # Full generation mode summary
-            if skipped_duplicate_nodes > 0:
-                print(f"  - Filtered out {skipped_duplicate_nodes} combinations with duplicate node perturbations")
-            print(f"  - Valid combinations (unique nodes only): {len(observation_combinations)}")
-            print(f"  - Datasets produced (with ≥1 compatible DAG): {len(datasets)}")
-        
         return datasets
     
     @staticmethod

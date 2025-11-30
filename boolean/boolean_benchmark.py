@@ -897,7 +897,7 @@ def setup_llm(llm_type: str, **kwargs) -> LLMInterface:
     elif llm_type == "ollama":
         
         return OllamaLLM(
-            model=kwargs.get('model', 'qwen2.5-tony-boolbean'),
+            model=kwargs.get('model', 'qwen2.5:0.5b'),
             api_url=kwargs.get('base_url', 'http://localhost:11434/api/chat'),
             temperature=kwargs.get('temperature', 0.7),
             max_tokens=kwargs.get('max_tokens', 4096),

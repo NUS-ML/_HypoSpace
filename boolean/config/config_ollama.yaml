@@ -1,7 +1,7 @@
 llm:
   type: ollama
   models:
-    ollama: qwen2.5-tony-boolbean
+    ollama: qwen2.5:0.5b
     openrouter: Null
     openai: Null
     anthropic: Null
